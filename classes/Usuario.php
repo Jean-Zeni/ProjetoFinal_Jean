@@ -27,20 +27,20 @@ class Usuario
     }
 
 
-    public function login($email, $senha)
+    public function login($emailUsuario, $senha)
     {
-        $query = "SELECT * FROM " . $this->table_usu . " WHERE email = ?";
+        $query = "SELECT * FROM " . $this->table_usu . " WHERE email_usuario = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$email]);
+        $stmt->execute([$emailUsuario]);
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($usuario && password_verify($senha, $usuario['senha'])) {
             return $usuario;
         }
         return false;
     }
-    public function criar($nome, $sexo, $fone, $email, $senha)
+    public function criar($emailUsuario, $senhaUsuario, $enderecoUsuario)
     {
-        return $this->registrar($nome, $sexo, $fone, $email, $senha);
+        return $this->registrar($emailUsuario, $senhaUsuario, $enderecoUsuario);
     }
     public function ler()
     {
@@ -49,29 +49,29 @@ class Usuario
         $stmt->execute();
         return $stmt;
     }
-    public function lerPorId($id)
+    public function lerPorId($idUsu)
     {
-        $query = "SELECT * FROM " . $this->table_usu . " WHERE id = ?";
+        $query = "SELECT * FROM " . $this->table_usu . " WHERE pk_id_usuario = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$id]);
+        $stmt->execute([$idUsu]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
 
-    public function atualizar($id, $nome, $sexo, $fone, $email)
+    public function atualizar($idUsu, $emailUsuario, $enderecoUsuario)
     {
-        $query = "UPDATE " . $this->table_usu . " SET nome = ?, sexo = ?, fone = ?, email = ? WHERE id = ?";
+        $query = "UPDATE " . $this->table_usu . " SET email_usuario = ?, endereco_usuario WHERE pk_id_usuario = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$nome, $sexo, $fone, $email, $id]);
+        $stmt->execute([$emailUsuario, $enderecoUsuario, $idUsu]);
         return $stmt;
     }
 
 
-    public function deletar($id)
+    public function deletar($idUsu)
     {
-        $query = "DELETE FROM " . $this->table_usu . " WHERE id = ?";
+        $query = "DELETE FROM " . $this->table_usu . " WHERE pk_id_usuario = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$id]);
+        $stmt->execute([$idUsu]);
         return $stmt;
     }
 }
