@@ -36,9 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body id="bodyTelaLogin">
 
-<!-- FORMULÁRIO DE LOGIN -->
+    <!-- FORMULÁRIO DE LOGIN -->
 
     <div class="boxForm">
+
+        <h1>Login</h1>
 
         <form method="POST">
 
@@ -54,11 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         </form> <br>
 
-        <button id="btnCad">Fazer Cadastro</button>
+        <a href="cadastro.php">Não tem login? Clique aqui!</a>
 
     </div>
 
-<!-- FIM DO FORMULÁRIO DE LOGIN -->
+    <!-- FIM DO FORMULÁRIO DE LOGIN -->
 
 </body>
 

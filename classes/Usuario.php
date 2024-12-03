@@ -9,12 +9,12 @@ class Usuario
     {
         $this->conn = $db;
     }
-    public function registrar($emailUsuario, $senhaUsuario, $enderecoUsuario)
+    public function registrar($nomeUsuario, $emailUsuario, $senhaUsuario)
     {
-        $query = "INSERT INTO " . $this->table_usu . " (email_usuario, senha_usuario, endereco_usuario) VALUES (?, ?, ?)";
+        $query = "INSERT INTO " . $this->table_usu . " (nome_usuario, email_usuario, senha_usuario) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($query);
         $hashed_password = password_hash($senhaUsuario, PASSWORD_BCRYPT);
-        $stmt->execute([$emailUsuario, $hashed_password, $enderecoUsuario]);
+        $stmt->execute([$nomeUsuario, $emailUsuario, $hashed_password]);
         return $stmt;
     }
 
@@ -33,14 +33,14 @@ class Usuario
         $stmt = $this->conn->prepare($query);
         $stmt->execute([$emailUsuario]);
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
-        if ($usuario && password_verify($senha, $usuario['senha'])) {
+        if ($usuario && password_verify($senha, $usuario['senha_usuario'])) {
             return $usuario;
         }
         return false;
     }
-    public function criar($emailUsuario, $senhaUsuario, $enderecoUsuario)
+    public function criar($nomeUsuario, $emailUsuario, $senhaUsuario)
     {
-        return $this->registrar($emailUsuario, $senhaUsuario, $enderecoUsuario);
+        return $this->registrar($nomeUsuario, $emailUsuario, $senhaUsuario);
     }
     public function ler()
     {
@@ -58,11 +58,11 @@ class Usuario
     }
 
 
-    public function atualizar($idUsu, $emailUsuario, $enderecoUsuario)
+    public function atualizar($idUsu, $nomeUsuario, $emailUsuario)
     {
-        $query = "UPDATE " . $this->table_usu . " SET email_usuario = ?, endereco_usuario WHERE pk_id_usuario = ?";
+        $query = "UPDATE " . $this->table_usu . " SET nome_usuario = ?, email_usuario = ? WHERE pk_id_usuario = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$emailUsuario, $enderecoUsuario, $idUsu]);
+        $stmt->execute([$nomeUsuario, $emailUsuario, $idUsu]);
         return $stmt;
     }
 
