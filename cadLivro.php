@@ -6,6 +6,11 @@ include_once './classes/Usuario.php';
 
 session_start();
 
+
+
+$dadosUsu = $usuario->lerPorId($_SESSION['idUsu']);
+$fkIdAutor = $dadosUsu['idUsu'];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $novoLivro = new Livro($db);
     $nomeLivro = $_POST['nomeLivro'];
@@ -40,8 +45,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if(!move_uploaded_file($imgLivro['tmp_name'], $destino)) {
             die("Erro ao salvar imagem.");
         } else if ($imgLivro['error'] !== UPLOAD_ERR_NO_FILE) {
-            die("")
+            die("Erro ao fazer upload do arquivo.");
         }
+
+        $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $destino);
+
     }
 
 
