@@ -33,11 +33,15 @@ class Usuario
         $stmt = $this->conn->prepare($query);
         $stmt->execute([$emailUsuario]);
         $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
         if ($usuario && password_verify($senha, $usuario['senha_usuario'])) {
+          
             return $usuario;
         }
         return false;
     }
+
+
     public function criar($nomeUsuario, $emailUsuario, $senhaUsuario)
     {
         return $this->registrar($nomeUsuario, $emailUsuario, $senhaUsuario);
@@ -47,7 +51,7 @@ class Usuario
         $query = "SELECT * FROM " . $this->table_usu;
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
-        return $stmt;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function lerPorId($idUsu)
     {

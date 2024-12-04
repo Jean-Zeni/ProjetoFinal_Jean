@@ -2,19 +2,24 @@
 
 include_once './config/config.php';
 include_once './classes/Usuario.php';
+session_start();
+
 
 $usu = new Usuario($db);
 
-// Processamento do login
+//$dadosUsuLog = $usu->ler();
 
+// Processamento do login
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
+       
+      
         if ($dadosUsuario = $usu->login($email, $senha)) {
-            $_SESSION['usuarioId'] = $dadosUsuario['pk_id_usuario'];
-            header('');
-            // Não redireciona a lugar nenhum ainda
+            echo"estou aqui!!";
+            $_SESSION['idUsu'] = $dadosUsuario['pk_id_usuario']; //ERRO QUE NAO SEI AJUSTAR
+            header('Location: home.php');
             exit();
         } else {
             $mensagemErro = "Credenciais Inválidas";
@@ -51,12 +56,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" name="senha" class="campoTexto"><br>
 
             <br>
-
+              
             <input id="btnLogin" type="submit" name="login" value="Entrar">
 
-        </form> <br>
+        </form> 
+        <!-- <h3>//echo $mensagemErro</h3> -->
+        <br>
 
-        <a href="cadastro.php">Não tem login? Clique aqui!</a>
+        <a href="cadastroUsu.php">Não tem login? Clique aqui!</a>
 
     </div>
 
