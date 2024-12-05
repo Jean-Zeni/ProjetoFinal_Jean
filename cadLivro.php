@@ -6,6 +6,11 @@ include_once './classes/Usuario.php';
 
 session_start();
 
+
+
+$dadosUsu = $usuario->lerPorId($_SESSION['idUsu']);
+$fkIdAutor = $dadosUsu['idUsu'];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $novoLivro = new Livro($db);
     $nomeLivro = $_POST['nomeLivro'];
@@ -39,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //MOVE O ARQUIVO PARA A PASTA UPLOADS
         if (!move_uploaded_file($imgLivro['tmp_name'], $destino)) {
             die("Erro ao salvar imagem.");
+<<<<<<< HEAD
         }
      } else if ($imgLivro['error'] !== UPLOAD_ERR_NO_FILE) {
             die("Erro ao fazer upload da imagem.");
@@ -48,6 +54,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Salvo com sucesso!";
         header('Location: cadLivro.php');
         exit();
+=======
+        } else if ($imgLivro['error'] !== UPLOAD_ERR_NO_FILE) {
+            die("Erro ao fazer upload do arquivo.");
+        }
+
+        $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $destino);
+
+>>>>>>> 563eba0a4bc20967b41e6e582a1a65f75103989a
     }
 
     // $novoUsuario->criar($nomeUsu, $sexoUsu, $foneUsu, $emailUsu, $senhaUsu);
