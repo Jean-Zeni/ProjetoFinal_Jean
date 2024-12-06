@@ -60,7 +60,7 @@ class Autor{
     {
         $query = "UPDATE " . $this->table_name . " SET nome_autor = ?, nacionalidade_autor = ? WHERE pk_id_autor = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$nomeAutor, $nacionalidadeAutor]);
+        $stmt->execute([ $nomeAutor, $nacionalidadeAutor, $idAutor]);
         return $stmt;
     }
 

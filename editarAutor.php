@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $row = $aut->lerPorId($id);
+    $idAutor = $_GET['id'];
+    $row = $aut->lerPorId($idAutor);
 }
 
 ?>
@@ -52,11 +52,15 @@ if (isset($_GET['id'])) {
 
     <form method="POST">
 
-        <input type="hidden" name="pk_id_autor" value="<?php echo $row['pk_id_autor'] ?>">
+        <input type="hidden" name="pk_id_autor" value="<?php echo $row['pk_id_autor']; ?>">
 
-        <label for="nome_autor">Nome do autor:</label>
-        <input type="text" name="nome_autor" id="">
+        <label for="nome_autor">Nome do autor:</label><br>
+        <input type="text" name="nome_autor" id="nomeAut" value="<?php echo $row['nome_autor']; ?>"><br><br>
 
+        <label for="nacionalidade_autor">Nacionalidade do Autor:</label><br>
+        <input type="text" name="nacionalidade_autor" id="nacionalidadeAut" value="<?php echo $row['nacionalidade_autor']; ?>"><br><br>
+
+        <input type="submit" value="Salvar Alterações">
     </form>
 
     </div>

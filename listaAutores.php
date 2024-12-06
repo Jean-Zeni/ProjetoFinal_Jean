@@ -50,6 +50,7 @@ if (isset($_GET['deletarAutor'])) {
 
                 <td>
                     <a href="deletarAutor.php?id=<?php echo $row['pk_id_autor']; ?>">Deletar</a>
+                    <a href="editarAutor.php?id=<?php echo $row['pk_id_autor']; ?>">Editar</a>
                 </td>
             </tr>
         <?php endwhile; ?>
