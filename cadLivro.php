@@ -3,14 +3,13 @@
 include_once './config/config.php';
 include_once './classes/Livro.php';
 include_once './classes/Usuario.php';
+include_once './classes/Autor.php';
 
 session_start();
 
-
-
-$dadosUsu = $usuario->lerPorId($_SESSION['idUsu']);
-$fkIdAutor = $dadosUsu['idUsu'];
-
+//INACABADO POR ENQUANTO
+$autorid = new Autor($db);
+$listaautor = $autorid->lerTodos();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $novoLivro = new Livro($db);
     $nomeLivro = $_POST['nomeLivro'];
@@ -18,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $valorLivro = $_POST['valor'];
     $editora = $_POST['editora'];
     $imgLivro = $_FILES['img'];
+    $fkIdAutor = $_POST['idAutor'];
 
     //Tratamento no upload da imagem
 
@@ -44,29 +44,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //MOVE O ARQUIVO PARA A PASTA UPLOADS
         if (!move_uploaded_file($imgLivro['tmp_name'], $destino)) {
             die("Erro ao salvar imagem.");
-<<<<<<< HEAD
         }
-     } else if ($imgLivro['error'] !== UPLOAD_ERR_NO_FILE) {
-            die("Erro ao fazer upload da imagem.");
-        }
-
-        $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $destino);
-        echo "Salvo com sucesso!";
-        header('Location: cadLivro.php');
-        exit();
-=======
-        } else if ($imgLivro['error'] !== UPLOAD_ERR_NO_FILE) {
-            die("Erro ao fazer upload do arquivo.");
-        }
-
-        $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $destino);
-
->>>>>>> 563eba0a4bc20967b41e6e582a1a65f75103989a
+    } else if ($imgLivro['error'] !== UPLOAD_ERR_NO_FILE) {
+        die("Erro ao fazer upload da imagem.");
     }
 
-    // $novoUsuario->criar($nomeUsu, $sexoUsu, $foneUsu, $emailUsu, $senhaUsu);
-    // header('Location: login.php');
-    // exit();
+    $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $destino, $fkIdAutor);
+    echo "Salvo com sucesso!";
+    header('Location: cadLivro.php');
+    exit();
+}
+
+// $novoUsuario->criar($nomeUsu, $sexoUsu, $foneUsu, $emailUsu, $senhaUsu);
+// header('Location: login.php');
+// exit();
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +83,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label for="editora">Editora:</label><br>
         <input type="text" name="editora" id="editora"><br><br>
+
+        <label for="idAutor">ID do Autor:</label><br>
+        <select name="idAutor" require>
+            <option value="">selecione o autor</option>
+            <?php foreach($listaautor as $listaautores): ?>
+                <option value="<?php echo $listaautores['pk_id_autor']; ?>">
+                     <?php echo $listaautores['nome_autor']; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <br><br>
 
         <input type="file" id="selectImg" name="img" accept=".jpg, .png, .jpeg"><br>
         <br>

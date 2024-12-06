@@ -35,7 +35,9 @@ $usu = new Usuario($db);
 
     <button id="btn1" onclick="location.href='cadLivro.php'">Cadastrar Livro/Produto</button><br><br>
 
-    <button></button>
+    <button id="btn2" onclick="location.href='cadAutor.php'">Cadastrar Autor</button><br><br>
+
+    <button id="btn3" onclick="location.href='listaAutores.php'">Autores Cadastrados</button>
 
 </body>
 

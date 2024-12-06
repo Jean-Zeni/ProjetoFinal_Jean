@@ -1,6 +1,6 @@
 <?php
 
-class Livro{
+class Autor{
 
     //PROPRIEDADES
     private $conn;
@@ -31,6 +31,22 @@ class Livro{
         return $stmt;
     }
 
+    public function lerTodos(){
+        $query = "SELECT * FROM " . $this->table_name;
+
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function listarTodos()
+    {
+        $sql = "SELECT * FROM tb_autores ORDER BY nome_autor ASC";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function lerPorId($idAutor)
     {
         $query = "SELECT * FROM " . $this->table_name . " WHERE pk_id_autor = ?";
@@ -49,7 +65,7 @@ class Livro{
     }
 
 
-    public function deletarNoti($idAutor)
+    public function deletarAutor($idAutor)
     {
         $query = "DELETE FROM " . $this->table_name . " WHERE pk_id_autor = ?";
         $stmt = $this->conn->prepare($query);

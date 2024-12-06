@@ -42,16 +42,16 @@ class Livro{
 
     public function atualizar($pkIdLivro, $nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor)
     {
-        $query = "UPDATE " . $this->table_name . " SET nome_livro = ?, data_publicacao_livro = ?, valor_livro = ?, editora = ?, img_livro = ?, fk_id_autor = ? WHERE pk_id_noticia = ?";
+        $query = "UPDATE " . $this->table_name . " SET nome_livro = ?, data_publicacao_livro = ?, valor_livro = ?, editora = ?, img_livro = ?, fk_id_autor = ? WHERE pk_id_livro = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro]);
+        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor]);
         return $stmt;
     }
 
 
-    public function deletarNoti($idLivro)
+    public function deletarLivro($idLivro)
     {
-        $query = "DELETE FROM " . $this->table_name . " WHERE pk_id_noticia = ?";
+        $query = "DELETE FROM " . $this->table_name . " WHERE pk_id_livro = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->execute([$idLivro]);
         return $stmt;
