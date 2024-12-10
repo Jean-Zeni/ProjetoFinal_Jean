@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </option>
             <?php endforeach; ?>
         </select>
-        <br><br>
+        <br><br> <!-- TENHO QUE MOLDAR CONFORME O ARQUIVO EXIGE -->
 
         <input type="file" id="selectImg" name="img" accept=".jpg, .png, .jpeg"><br>
         <br>
