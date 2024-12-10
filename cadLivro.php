@@ -7,7 +7,6 @@ include_once './classes/Autor.php';
 
 session_start();
 
-//INACABADO POR ENQUANTO
 $autorid = new Autor($db);
 $listaautor = $autorid->lerTodos();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

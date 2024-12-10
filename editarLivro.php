@@ -8,8 +8,12 @@ if (!isset($_SESSION['idUsu'])) {
 
 include_once './config/config.php';
 include_once './classes/Livro.php';
+include_once './classes/Autor.php';
 
 $livro = new Livro($db);
+
+$autor = new Autor($db);
+$listaAutor = $autor->lerTodos();
 
 try {
     $livros = $livro->lerLivroPorAutor();
@@ -23,12 +27,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dataPubli = $_POST['data_publicacao_livro'];
     $valor = $_POST['valor_livro'];
     $editora = $_POST['editora'];
-    $fkIdAut = $_POST['fk_id_autor'];
-    $idAutor = $_POST['pk_id_autor'];
+    $imgLivro = $_FILES['img'];
+    $fkIdAut = $_POST['idAutor'];
+    // $idAutor = $_POST['idAutor'];
 
-    $livro->atualizar($idLivro, $nome, $dataPubli, $valor, $editora, $fkIdAut, $idAutor);
+    //TRATAMENTO DE IMAGEM
 
-    header('Location: listaLivro.php');
+      //TAMANHO
+      $nomeImg = "";
+      if ($imgLivro['error'] === UPLOAD_ERR_OK) {
+          $extensao = strtolower(pathinfo($imgLivro['name'], PATHINFO_EXTENSION));
+          $tamanhoMax = 10 * 1024 * 1024; // 10 MB
+  
+          if ($imgLivro['size'] > $tamanhoMax) {
+              die("O arquivo não pode ser maior que 10MB.");
+          }
+  
+          // Formatos permitidos
+          $tiposPermitidos = ['jpg', 'jpeg', 'png'];
+          if (!in_array($extensao, $tiposPermitidos)) {
+              die("Apenas arquivos em formato PNG, JPG ou JPEG são aceitos.");
+          }
+  
+          //GERA UM NOME ÚNICO PARA CADA IMAGEM
+          $nomeImg = uniqid() . "." . $extensao;
+          $destino = "uploads/" . $nomeImg;
+  
+          //MOVE O ARQUIVO PARA A PASTA UPLOADS
+          if (!move_uploaded_file($imgLivro['tmp_name'], $destino)) {
+              die("Erro ao salvar imagem.");
+          }
+      } else if ($imgLivro['error'] !== UPLOAD_ERR_NO_FILE) {
+          die("Erro ao fazer upload da imagem.");
+      }
+    //FIM DO TRATAMENTO DE IMAGEM
+
+    $livro->atualizar($idLivro, $nome, $dataPubli, $valor, $editora, $destino, $fkIdAut);
+
+    header('Location: listaLivros.php');
 
     exit();
 }
@@ -54,22 +90,39 @@ if (isset($_GET['id'])) {
 
     <h1>Editar Livro</h1>
 
-    <form method="POST">
-
-        <input type="hidden" name="pk_id_autor" value="<?php echo $row['pk_id_autor']; ?>">
+    <form method="POST" enctype="multipart/form-data">
         <input type="hidden" name="pk_id_livro" value="<?php echo $row['pk_id_livro']; ?>">
-        <!-- TALVEZ O O INPUT PK_ID_AUTOR TENHA QUE SOFRER ALTERAÇÕES -->
 
+        <!-- ESCOLHA DO AUTOR -->
         <label for="idAutor">Autor:</label><br>
         <select name="idAutor" require>
-            <option value="">selecione o autor</option>
-            <?php foreach($listaautor as $listaautores): ?>
-                <option value="<?php echo $listaautores['pk_id_autor']; ?>">
-                     <?php echo $listaautores['nome_autor']; ?>
+            <option>selecione o autor</option>
+            <?php foreach($listaAutor as $listaAutores): ?>
+                <option value="<?php echo $listaAutores['fk_id_autor']; ?>">
+                     <?php echo $listaAutores['nome_autor'];?>
                 </option>
             <?php endforeach; ?>
         </select>
         <br><br>
+
+        <!-- NOME -->
+        <label for="nome_livro">Nome do Livro:</label><br>
+        <input type="text" name="nome_livro" id="txtNomeLivro" value="<?php echo $row['nome_livro'];?> "><br><br>
+        
+        <!-- DATA DE PUBLICAÇÃO -->
+        <label for="data_publicacao_livro">Data de Publicação do Livro:</label><br>
+        <input type="date" name="data_publicacao_livro" id="txtDataPubliLivro" value="<?php echo $row['data_publicacao_livro'] ?>"><br><br>
+
+        <!-- VALOR -->
+        <label for="valor_livro">Valor do Livro:</label><br>
+        <input type="number" name="valor_livro" id="txtValorLivro" step="0.01" value="<?php echo $row['valor_livro']?>"><br><br>
+
+        <!-- EDITORA -->
+        <label for="editora">Editora</label>
+        <input type="text" name="editora" id="txtEditora" value="<?php echo $row['editora']?>"><br><br>
+
+        <!-- IMAGEM -->
+        <input type="file" id="selectImg" name="img" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro']?>"><br>
 
         <input type="submit" value="Salvar Alterações">
     </form>

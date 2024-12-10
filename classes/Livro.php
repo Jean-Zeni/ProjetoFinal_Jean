@@ -29,7 +29,7 @@ class Livro
     }
     public function lerLivroPorAutor()
     {
-        $query = "SELECT  l.nome_livro, l.data_publicacao_livro, l.valor_livro,
+        $query = "SELECT  l.pk_id_livro, l.nome_livro, l.data_publicacao_livro, l.valor_livro,
                           l.editora,  l.img_livro,  a.nome_autor
                           FROM tb_livros AS l
                           INNER JOIN tb_autores AS a
@@ -61,7 +61,7 @@ class Livro
     {
         $query = "UPDATE " . $this->table_name . " SET nome_livro = ?, data_publicacao_livro = ?, valor_livro = ?, editora = ?, img_livro = ?, fk_id_autor = ? WHERE pk_id_livro = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor]);
+        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor, $pkIdLivro]);
         return $stmt;
     }
 

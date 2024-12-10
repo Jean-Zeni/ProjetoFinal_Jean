@@ -20,7 +20,7 @@ $livroDb = new Livro($db);
 $dadosLivro = $livroDb->lerLivroPorAutor();
 
 
-//PROCESSAMENTO DA EXCLUSÃO DO AUTOR
+//PROCESSAMENTO DA EXCLUSÃO DO LIVRO
 if (isset($_GET['deletarLivro'])) {
     $deletaLivro = $_GET['deletarLivro'];
     $livroDb->deletarLivro($deletaLivro);
@@ -70,6 +70,10 @@ if (isset($_GET['deletarLivro'])) {
         echo $row['editora'] . "<br><br>";
 
         echo "Autor: <strong>" . $row['nome_autor'] . "</strong><br><br>Data de Publicação: " . $dataFormatada->format('d/m/Y'); ?></p>
+
+        <a href="deletarLivro.php?id=<?php echo $row['pk_id_livro']; ?>" >Deletar</a>
+        <a href="editarLivro.php?id=<?php echo $row['pk_id_livro']; ?>" >Editar</a><br><br>
+
     </div>
 
     <?php endwhile; ?>
