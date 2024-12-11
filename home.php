@@ -33,13 +33,17 @@ $usu = new Usuario($db);
 
     <header>HOME</header><br>
 
-    <button id="btn1" onclick="location.href='cadLivro.php'">Cadastrar Livro/Produto</button><br><br>
+    <button id="btn1" onclick="location.href='cadLivro.php'">Cadastrar Novo Livro/Produto</button><br><br>
 
-    <button id="btn2" onclick="location.href='cadAutor.php'">Cadastrar Autor</button><br><br>
+    <button id="btn2" onclick="location.href='listaLivros.php'">Livros</button><br><br>
 
-    <button id="btn3" onclick="location.href='listaAutores.php'">Autores Cadastrados</button><br><br>
+    <button id="btn3" onclick="location.href='cadAutor.php'">Cadastrar Novo Autor</button><br><br>
 
-    <button id="btn4" onclick="location.href='listaLivros.php'">Livros</button><br><br>
+    <button id="btn4" onclick="location.href='listaAutores.php'">Autores Cadastrados</button><br><br>
+
+    <button id="btn5" onclick="location.href='cadEditora.php'">Cadastrar Nova Editora</button><br><br>
+
+    
 
     <button id="btnSair" onclick="location.href='logout.php'">Fazer logout</button><br><br>
 
