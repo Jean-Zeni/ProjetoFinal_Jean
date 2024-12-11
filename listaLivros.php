@@ -82,7 +82,7 @@ if (isset($_GET['deletarLivro'])) {
 
 </div>
 
-<button id="btnSair" onclick="location.href='home.php'">Voltar</button>
+<button class="btnSair" onclick="location.href='home.php'">Voltar</button>
 
 </main>
 

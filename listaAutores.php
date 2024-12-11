@@ -54,8 +54,9 @@ if (isset($_GET['deletarAutor'])) {
                 </td>
             </tr>
         <?php endwhile; ?>
-    </table>
+    </table><br>
 
+    <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
 </body>
 
 </html>

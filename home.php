@@ -47,7 +47,7 @@ $usu = new Usuario($db);
 
     
 
-    <button id="btnSair" onclick="location.href='logout.php'">Fazer logout</button><br><br>
+    <button id="btnLogout" onclick="location.href='logout.php'">Fazer logout</button><br><br>
 
 </body>
 

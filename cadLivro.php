@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="submit" id="addLivro" value="Adicionar"><br><br>
     </form>
 
-    <button id="btnSair" onclick="location.href='home.php'">Voltar</button>
+    <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
 </body>
 
 </html>

@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="submit" value="Adicionar"><br><br>
     <input type="reset" value="Limpar">
 </form><br>
-<button onclick="location.href='home.php'">Voltar</button>
+<button class="btnSair" onclick="location.href='home.php'">Voltar</button>
 
 </div>
 

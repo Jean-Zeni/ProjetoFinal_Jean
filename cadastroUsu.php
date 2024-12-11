@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <br><br>
 
-            <button id="btnSair" onclick="location.href='index.php'">Sair</button>
+            <button class="btnSair" onclick="location.href='index.php'">Sair</button>
         </form>
 
     </div>

@@ -63,6 +63,7 @@ if (isset($_GET['id'])) {
         <input type="submit" value="Salvar Alterações">
     </form>
 
+    <button class="btnSair" onclick="location.href='listaAutores.php'">Voltar</button>
     </div>
 
 </body>

@@ -104,7 +104,7 @@ if (isset($_GET['id'])) {
             <select name="idAutor" require>
                 <?php foreach ($listaAutor as $listaAutores): ?>
                     <option value="<?php echo $listaAutores['pk_id_autor']; ?>">
-                        <?php echo $listaAutores['nome_autor']; ?>
+                        mudar autor
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -126,8 +126,8 @@ if (isset($_GET['id'])) {
             <label for="editora">Editora:</label><br>
             <select name="editora" require>
                 <?php foreach ($listaEditora as $listaEditoras): ?>
-                    <option value="...">
-                        <?php echo $listaEditoras['nome_editora']; ?>
+                    <option value="<?php echo $listaEditoras['pk_id_editora']; ?>">
+                        mudar editora
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -137,7 +137,9 @@ if (isset($_GET['id'])) {
             <input type="file" id="selectImg" name="img" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro'] ?>"><br><br>
 
             <input type="submit" value="Salvar Alterações">
-        </form>
+        </form><br>
+
+        <button class="btnSair" onclick="location.href='listaLivros.php'">Voltar</button>
 
     </div>
 

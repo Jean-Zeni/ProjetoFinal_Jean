@@ -56,6 +56,7 @@ if (isset($_GET['deletarEditora'])) {
         <?php endwhile; ?>
     </table>
 
+    <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
 </body>
 
 </html>
