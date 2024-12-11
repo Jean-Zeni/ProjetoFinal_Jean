@@ -4,19 +4,25 @@ include_once './config/config.php';
 include_once './classes/Livro.php';
 include_once './classes/Usuario.php';
 include_once './classes/Autor.php';
+include_once './classes/Editora.php';
 
 session_start();
 
 $autorid = new Autor($db);
 $listaautor = $autorid->lerTodos();
+
+$editoraId = new Editora($db);
+$listaEditora = $editoraId->lerTodos();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $novoLivro = new Livro($db);
     $nomeLivro = $_POST['nomeLivro'];
     $dataPubliLivro = $_POST['dataPubli'];
     $valorLivro = $_POST['valor'];
-    $editora = $_POST['editora'];
     $imgLivro = $_FILES['img'];
     $fkIdAutor = $_POST['idAutor'];
+    $fkIdEditora = $_POST['idEditora'];
+    
 
     //Tratamento no upload da imagem
 
@@ -48,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erro ao fazer upload da imagem.");
     }
 
-    $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $destino, $fkIdAutor);
+    $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $destino, $fkIdAutor, $fkIdEditora);
     echo "Salvo com sucesso!";
     header('Location: cadLivro.php');
     exit();
@@ -80,10 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="valor">Valor do Livro:</label><br>
         <input type="number" name="valor" id="valorLivro" step="0.01"><br><br>
 
-        <label for="editora">Editora:</label><br>
-        <input type="text" name="editora" id="editora"><br><br>
-
-        <label for="idAutor">ID do Autor:</label><br>
+        <label for="idAutor">Autor:</label><br>
         <select name="idAutor" require>
             <option value="">selecione o autor</option>
             <?php foreach($listaautor as $listaautores): ?>
@@ -92,7 +95,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </option>
             <?php endforeach; ?>
         </select>
-        <br><br> <!-- TENHO QUE MOLDAR CONFORME O ARQUIVO EXIGE -->
+        <br><br>
+
+        <label for="idEditora">Editora:</label><br>
+        <select name="idEditora" require>
+            <option value="">selecione a editora</option>
+            <?php foreach($listaEditora as $listaEditoras): ?>
+                <option value="<?php echo $listaEditoras['pk_id_editora']; ?>">
+                     <?php echo $listaEditoras['nome_editora']; ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <br><br>
 
         <input type="file" id="selectImg" name="img" accept=".jpg, .png, .jpeg"><br>
         <br>

@@ -41,7 +41,7 @@ class Editora{
 
     public function listarTodos()
     {
-        $sql = "SELECT * FROM" . $this->table_name . "ORDER BY nome_editora ASC";
+        $sql = "SELECT * FROM tb_editoras ORDER BY nome_editora ASC";
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -56,7 +56,7 @@ class Editora{
     }
 
 
-    public function atualizar($idEditora, $nomeEditora, $infosEditora)
+    public function atualizar($nomeEditora, $infosEditora, $idEditora)
     {
         $query = "UPDATE " . $this->table_name . " SET nome_editora = ?, infos_editora = ? WHERE pk_id_editora = ?";
         $stmt = $this->conn->prepare($query);

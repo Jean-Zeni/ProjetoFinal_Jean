@@ -67,7 +67,7 @@ if (isset($_GET['deletarLivro'])) {
         <!-- INFOS LIVRO -->
         <p id="conteudoCard"><?php echo $row['nome_livro'] . "<br><br>";
 
-        echo "Editora: " . $row['editora'] . "<br><br>";
+        echo "Editora: " . $row['nome_editora'] . "<br><br>";
 
         echo "Autor: <strong>" . $row['nome_autor'] . "</strong><br><br>
         Valor do produto: " . $row['valor_livro'] . 

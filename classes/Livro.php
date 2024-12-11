@@ -15,29 +15,43 @@ class Livro
         $this->conn = $db;
     }
 
-    public function registrar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor)
+    public function registrar($nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora)
     {
-        $query = "INSERT INTO " . $this->table_name . " (nome_livro, data_publicacao_livro, valor_livro, editora, img_livro, fk_id_autor) VALUES (?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO " . $this->table_name . " (nome_livro, data_publicacao_livro, valor_livro, img_livro, fk_id_autor, fk_id_editora) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor]);
+        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora]);
         return $stmt;
     }
 
-    public function criar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor)
+    public function criar($nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora)
     {
-        return $this->registrar($nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor);
+        return $this->registrar($nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora);
     }
     public function lerLivroPorAutor()
     {
         $query = "SELECT  l.pk_id_livro, l.nome_livro, l.data_publicacao_livro, l.valor_livro,
-                          l.editora,  l.img_livro,  a.nome_autor
+                          l.fk_id_editora,  l.img_livro,  a.nome_autor, e.nome_editora
                           FROM tb_livros AS l
                           INNER JOIN tb_autores AS a
-                          ON l.fk_id_autor = a.pk_id_autor;";
+                          ON l.fk_id_autor = a.pk_id_autor
+                          INNER JOIN tb_editoras as e
+                          ON l.fk_id_editora = e.pk_id_editora";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
     }
+
+    // public function lerLivroPorEditora()
+    // {
+    //     $query = "SELECT  l.pk_id_livro, l.nome_livro, l.data_publicacao_livro, l.valor_livro,
+    //                       l.fk_id_autor,  l.img_livro,  e.nome_editora
+    //                       FROM tb_livros AS l
+    //                       INNER JOIN tb_editoras AS e
+    //                       ON l.fk_id_editora = e.pk_id_editora;";
+    //     $stmt = $this->conn->prepare($query);
+    //     $stmt->execute();
+    //     return $stmt;
+    // }
 
 
     public function ler()
@@ -57,11 +71,11 @@ class Livro
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function atualizar($pkIdLivro, $nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor)
+    public function atualizar($pkIdLivro, $nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora)
     {
-        $query = "UPDATE " . $this->table_name . " SET nome_livro = ?, data_publicacao_livro = ?, valor_livro = ?, editora = ?, img_livro = ?, fk_id_autor = ? WHERE pk_id_livro = ?";
+        $query = "UPDATE " . $this->table_name . " SET nome_livro = ?, data_publicacao_livro = ?, valor_livro = ?, img_livro = ?, fk_id_autor = ?, fk_id_editora WHERE pk_id_livro = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $editora, $imgLivro, $fkIdAutor, $pkIdLivro]);
+        $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora, $pkIdLivro]);
         return $stmt;
     }
 

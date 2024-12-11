@@ -9,11 +9,15 @@ if (!isset($_SESSION['idUsu'])) {
 include_once './config/config.php';
 include_once './classes/Livro.php';
 include_once './classes/Autor.php';
+include_once './classes/Editora.php';
 
 $livro = new Livro($db);
 
 $autor = new Autor($db);
 $listaAutor = $autor->lerTodos();
+
+$editora = new Editora($db);
+$listaEditora = $editora->lerTodos();
 
 try {
     $livros = $livro->lerLivroPorAutor();

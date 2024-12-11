@@ -43,6 +43,8 @@ $usu = new Usuario($db);
 
     <button id="btn5" onclick="location.href='cadEditora.php'">Cadastrar Nova Editora</button><br><br>
 
+    <button id="btn6" onclick="location.href='listaEditoras.php'">Editoras Cadastradas</button><br><br>
+
     
 
     <button id="btnSair" onclick="location.href='logout.php'">Fazer logout</button><br><br>
