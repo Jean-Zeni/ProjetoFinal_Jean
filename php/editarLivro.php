@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         //GERA UM NOME ÚNICO PARA CADA IMAGEM
         $nomeImg = uniqid() . "." . $extensao;
-        $destino = "uploads/" . $nomeImg;
+        $destino = "../uploads/" . $nomeImg;
 
         //MOVE O ARQUIVO PARA A PASTA UPLOADS
         if (!move_uploaded_file($imgLivro['tmp_name'], $destino)) {

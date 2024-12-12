@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <h1>Login</h1>
 
-        <form method="POST">
+        <form id="formCadNewUsu" method="POST">
 
             <label for="email">E-mail:</label><br>
             <input type="email" name="email" class="campoTexto"><br>

@@ -59,7 +59,7 @@ if (isset($_GET['deletarLivro'])) {
 
     ?>
 
-<!-- AQUI FICARÃO OS CARDS DE NOTÍCIAS -->
+<!-- AQUI FICARÃO OS CARDS DE LIVROS -->
     <div id="cardLivro">
         <!-- IMG LIVRO -->
         <img id="imgLivro" src="<?php echo $row['img_livro']?>" alt="Imagem do livro"> 

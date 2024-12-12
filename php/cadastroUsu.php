@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazer Cadastro:</title>
     <link rel="stylesheet" href="style.css">
+    <script src="../js/script.js" defer></script>
 </head>
 
 <body id="telaCadNovoUsu">
@@ -38,11 +39,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <br><br>
 
             <label for="emailUsuario">E-mail:</label><br>
-            <input type="email" name="emailUsuario" id="campoTexto">
+            <input type="email" name="emailUsuario" class="campoTexto">
             <br><br>
 
             <label for="senhaUsuario">Senha:</label><br>
-            <input type="password" name="senhaUsuario" id="campoTexto">
+            <input type="password" name="senhaUsuario" class="campoTexto" id="fieldSenha">
             <br><br>
 
             <input type="submit" id="btnCadNewUsu" value="Cadastrar">
