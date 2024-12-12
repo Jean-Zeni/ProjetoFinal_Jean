@@ -71,9 +71,10 @@ class Livro
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function atualizar($pkIdLivro, $nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora)
+    public function atualizar($nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora, $pkIdLivro)
     {
-        $query = "UPDATE " . $this->table_name . " SET nome_livro = ?, data_publicacao_livro = ?, valor_livro = ?, img_livro = ?, fk_id_autor = ?, fk_id_editora WHERE pk_id_livro = ?";
+       
+        $query = "UPDATE " . $this->table_name . " SET nome_livro = ?, data_publicacao_livro = ?, valor_livro = ?, img_livro = ?, fk_id_autor = ?, fk_id_editora = ? WHERE pk_id_livro = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->execute([$nomeLivro, $dataPubliLivro, $valorLivro, $imgLivro, $fkIdAutor, $fkIdEditora, $pkIdLivro]);
         return $stmt;

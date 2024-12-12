@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome_livro'];
     $dataPubli = $_POST['data_publicacao_livro'];
     $valor = $_POST['valor_livro'];
-    $editora = $_POST['editora'];
-    $imgLivro = $_FILES['img'];
+    $fkIdEditora = $_POST['editora'];
+    $imgLivro = $_FILES['imgLivro'];
     $fkIdAut = $_POST['idAutor'];
     // $idAutor = $_POST['idAutor'];
 
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     //FIM DO TRATAMENTO DE IMAGEM
 
-    $livro->atualizar($idLivro, $nome, $dataPubli, $valor, $editora, $destino, $fkIdAut);
+    $livro->atualizar($nome, $dataPubli, $valor, $destino, $fkIdAut, $fkIdEditora, $idLivro);
 
     header('Location: listaLivros.php');
 
@@ -104,7 +104,7 @@ if (isset($_GET['id'])) {
             <select name="idAutor" require>
                 <?php foreach ($listaAutor as $listaAutores): ?>
                     <option value="<?php echo $listaAutores['pk_id_autor']; ?>">
-                        mudar autor
+                        <?php echo $listaAutores['nome_autor']?>
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -127,14 +127,14 @@ if (isset($_GET['id'])) {
             <select name="editora" require>
                 <?php foreach ($listaEditora as $listaEditoras): ?>
                     <option value="<?php echo $listaEditoras['pk_id_editora']; ?>">
-                        mudar editora
+                        <?php echo $listaEditoras['nome_editora']?>
                     </option>
                 <?php endforeach; ?>
             </select>
             <br><br>
 
             <!-- IMAGEM -->
-            <input type="file" id="selectImg" name="img" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro'] ?>"><br><br>
+            <input type="file" id="selectImg" name="imgLivro" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro']?>"><br><br>
 
             <input type="submit" value="Salvar Alterações">
         </form><br>
