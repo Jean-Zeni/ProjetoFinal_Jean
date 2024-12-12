@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <h1>Cadastre-se</h1>
 
-        <form method="POST">
+        <form id="formCadNewUsu" method="POST">
             <label for="nomeUsu">Nome:</label><br>
             <input type="text" name="nomeUsuario" class="campoTexto">
             <br><br>

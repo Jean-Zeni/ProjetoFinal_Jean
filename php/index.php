@@ -36,18 +36,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fazer Login</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body id="bodyTelaLogin">
 
     <!-- FORMULÁRIO DE LOGIN -->
 
-    <div class="boxForm">
+    <div id="boxFormLogin">
 
         <h1>Login</h1>
 
-        <form id="formCadNewUsu" method="POST">
+        <form method="POST">
 
             <label for="email">E-mail:</label><br>
             <input type="email" name="email" class="campoTexto"><br>
