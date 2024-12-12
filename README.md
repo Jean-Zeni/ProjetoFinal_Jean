@@ -131,10 +131,7 @@ Agradeço por contribuir com este projeto!
 ---
 
 <a name="tabelas"></a>
-## Tabela
-
-
-## Tabela com a Tag HTML <table>
+## Infos adicionais do desenvolvedor
 
 <table>
   <tr>
