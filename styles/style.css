@@ -7,6 +7,10 @@
 #bodyTelaLogin{
     display: flex;
 
+    margin: 0;
+
+    background-color: cadetblue;
+
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -23,7 +27,7 @@
         padding: 20px;
         padding-left: 50px;
         padding-right: 50px;
-        background-color: rgb(221, 221, 221);
+        background-color: rgba(221, 221, 221, 0.562);
     }
 
     label{
@@ -33,10 +37,22 @@
     .campoTexto{
         font-size: 18px;
         text-align: center;
+        border-radius: 5px;
+
+        background-color: rgba(255, 255, 255, 0.808);
     }
 
     #btnLogin{
         font-size: 20px;
+        border-radius: 5px;
+    }
+
+    #btnLogin:hover{
+        background-color: blue;
+        color: white;
+
+        transition: background-color 0.15s ease-in-out;
+        cursor: pointer;
     }
 
 }
