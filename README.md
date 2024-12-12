@@ -2,7 +2,7 @@
 
 ## Desenvolvedor
 
-<img src="https://github.com/Jean-Zeni.png" width="80" height="80">
+<img src="https://github.com/Jean-Zeni.png" width="200" style="border-top-left-radius: 50px; border-bottom-right-radius: 50px">
 
 [Jean Pereira Zeni](https://github.com/Jean-Zeni)
 
@@ -10,7 +10,8 @@
 
 
 ## Índice
-- [Descrição do Projeto](#descricao-do-projeto)
+- [Descrição do Projeto](#descricao_do_projeto)
+- [Tabela de Relações ER](#tab_relacoes)
 - [Badges](#badges)
 - [Tecnologias](#tecnologias)
 - [IDEs Utilizadas](#ides)
@@ -20,11 +21,15 @@
 - [Tabelas](#tabelas)
 ---
 
-<a name="descricao-do-projeto"></a>
+<a name="descricao_do_projeto"></a>
 ## Descrição do Projeto
-Este projeto se trata de uma página web usada para controlar o estoque de uma livraria (fícticia). Nele foram inseridos 3 CRUDs funcionais. Pretendo ainda adicionar responsividade ao projeto e uma estilização que torne a página mais atraente aos usuários. Além disso, a parte de login deverá ser aperfeiçoada. Esse projeto foi feito por Jean Pereira Zeni.
+Este projeto se trata de uma página web usada para controlar o estoque de uma livraria fícticia, onde os colaboradores poderão acessar com facilidade os produtos cadastrados na loja, além dos autores e editoras relacionadas aos mesmos. Nele o usuário pode verificar os ***livros*** juntamente com informações como *autor*, *data de publicação*, *valor* e etc. Também os ***autores*** e ***editoras*** cadastrados poderão ser verificados e modificados. Projeto desenvolvido por Jean Pereira Zeni.
 
 ---
+<a name="tab_relacoes"></a>
+## Tabela de Relações ER
+
+<img src="./imgsReadme/diagrama_er.PNG" width="600" style="border-radius: 20px;">
 
 <a name="badges"></a>
 <!-- Link para pagina da badges -->
@@ -41,12 +46,10 @@ Este projeto se trata de uma página web usada para controlar o estoque de uma l
 - ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 <!-- Badge JavaScript -->
 - ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-<!-- Badge MariaDB -->
-- ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)
+<!-- Badge MySQL -->
+- ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white)
 <!-- Badge GitHub Pages -->
 - ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
-<!-- Badge ChatGpt -->
-- ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 
 - **...** 
 ---
@@ -69,7 +72,7 @@ Para configurar e executar o projeto localmente, siga os passos abaixo:
     ```bash
     code . 
 ---
-3. Será necessário ter o Xampp instalado em sua máquina e, tendo este instalado, subir o servidor Apache e o banco de dados MySQL ( use o arquivo SQL que está disponível em meu Git Hub ( ; ).
+3. Será necessário ter o Xampp instalado em sua máquina e, tendo este instalado, subir o servidor Apache e o banco de dados MySQL (use o arquivo SQL que está disponível em meu Git Hub).
 ---
 4. Após isso será necessário escrever o caminho do arquivo do projeto precedido por "localhost/" ou "127.0.0.1/" na barra de tarefas. Exemplo: "localhost/projeto_livraria/php/index.php"
 ---
@@ -81,13 +84,20 @@ Para configurar e executar o projeto localmente, siga os passos abaixo:
 
     - Formulários que permitem o cadastro e edição de objetos de uma tabela.
 
-- **CRUD**
+- **CRUDs**
 
-    - Criação, leitura, atualização e exclusão de objetos de uma determinada tabela.
+    - **CRUD Livros:**
+    <p>O CRUD relacionado aos livros da loja concede ao usuário a capacidade de adicionar um livro com Nome do Livro, a data de publicação do mesmo, além de vinculá-lo a um autor e à uma editora já cadastrados no banco de dados e adicionar uma imagem para ao produto. Também permite que os usuários deletem ou editem um livro além de possibilitar que eles sejam listados em uma tela para esse fim. </p>
+
+    - **CRUD Autores:**
+    <p>Muito parecido com o primeiro CRUD, mas foca em alguns dados do autor, como seu nome e sua nacionalidade.</p>
+
+    - **CRUD Editoras:**
+    <p>Como os demais, permite ao usuário adicionar, deletar, ler ou atualizar um objeto da tabela. Possui um atributo de nome e um atributo de textual de informações da editora onde se pode adicionar informações relevantes à editora cadastrada como, por exmeplo números telefônicos, emails, endereços...</p>
 
 - **Integração com Banco de Dados**
 
-    - Conexão entre os arquivos que compõem a página e o banco de dados MariaDB.
+    - Conexão entre os arquivos que compõem a página e o banco de dados.
 
 - **Sistema de Login**
 
