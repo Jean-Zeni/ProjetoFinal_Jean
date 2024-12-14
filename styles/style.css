@@ -55,7 +55,73 @@
         cursor: pointer;
     }
 
+    .mensagem-erro{
+        font-weight: bold;
+    }
 }
+/* ==================================================================================================================== */
+
+/* ESTILIZAÇÃO DA TELA DE CADASTRO DE USUÁRIO */
+/* ==================================================================================================================== */
+#telaCadNovoUsu{
+    display: flex;
+
+    margin: 0;
+
+    background-color: cadetblue;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-family: "Gotu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    width: 100%;
+    height: 100%;
+
+    #addUsu{
+        margin-top: 100px;
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        background-color: rgba(221, 221, 221, 0.562);
+
+        label{
+            font-size: 20px;
+        }
+
+        #btnCadNewUsu{
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    
+        #btnCadNewUsu:hover{
+            background-color: blue;
+            color: white;
+    
+            transition: background-color 0.15s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btnSair{
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .btnSair:hover{
+            background-color: red;
+            color: white;
+    
+            transition: background-color 0.15s ease-in-out;
+            cursor: pointer;
+        }
+    }
+}
+/* ==================================================================================================================== */
+
+
 
 
 

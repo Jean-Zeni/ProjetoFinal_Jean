@@ -78,4 +78,5 @@ class Usuario
         $stmt->execute([$idUsu]);
         return $stmt;
     }
+
 }

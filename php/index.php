@@ -14,16 +14,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
         $senha = $_POST['senha'];
-       
-      
+
+
         if ($dadosUsuario = $usu->login($email, $senha)) {
-            echo"estou aqui!!";
+            echo "estou aqui!!";
             $_SESSION['idUsu'] = $dadosUsuario['pk_id_usuario']; //ERRO QUE NAO SEI AJUSTAR
             header('Location: home.php');
             exit();
         } else {
             $mensagemErro = "Credenciais Inválidas";
-            echo $mensagemErro;
+            // echo $mensagemErro;
         }
     }
 }
@@ -56,10 +56,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="password" name="senha" class="campoTexto"><br>
 
             <br>
-              
+
             <input id="btnLogin" type="submit" name="login" value="Entrar">
 
-        </form> 
+            <?php if (!empty($mensagemErro)): ?>
+                <p class="mensagem-erro"><?php echo $mensagemErro; ?></p>
+            <?php endif; ?>
+
+        </form>
         <!-- <h3>//echo $mensagemErro</h3> -->
         <br>
 
