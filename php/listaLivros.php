@@ -36,7 +36,7 @@ if (isset($_GET['deletarLivro'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livros</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body id="telaListaLivros">
     
@@ -46,6 +46,7 @@ if (isset($_GET['deletarLivro'])) {
 
 <div id="listaDeLivros">
 
+<ul>
 <!-- ======================================================================================= -->
 
 <?php while ($row = $dadosLivro->fetch(PDO::FETCH_ASSOC)) : ?>
@@ -60,7 +61,8 @@ if (isset($_GET['deletarLivro'])) {
     ?>
 
 <!-- AQUI FICARÃO OS CARDS DE LIVROS -->
-    <div id="cardLivro">
+    <li>
+        <div id="cardLivro">
         <!-- IMG LIVRO -->
         <img id="imgLivro" src="<?php echo $row['img_livro']?>" alt="Imagem do livro"> 
 
@@ -77,9 +79,10 @@ if (isset($_GET['deletarLivro'])) {
         <a href="editarLivro.php?id=<?php echo $row['pk_id_livro']; ?>" >Editar</a><br><br>
 
     </div>
+    </li>
 
     <?php endwhile; ?>
-
+    </ul>
 </div>
 
 <button class="btnSair" onclick="location.href='home.php'">Voltar</button>

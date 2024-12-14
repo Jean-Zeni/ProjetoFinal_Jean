@@ -227,36 +227,36 @@
 
     background-color: cadetblue;
 
-#formCadLivro {
-    margin-top: 20px;
-    padding: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: rgba(221, 221, 221, 0.562);
+    #formCadLivro {
+        margin-top: 20px;
+        padding: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: rgba(221, 221, 221, 0.562);
 
-    label{
-        font-size: 20px;
-    }
+        label {
+            font-size: 20px;
+        }
 
-    .inputNormal{
-        font-size: 17px;
-        text-align: center;
-        border-radius: 5px;
-    }
+        .inputNormal {
+            font-size: 17px;
+            text-align: center;
+            border-radius: 5px;
+        }
 
-    #valorLivro{
-        width: 60px;
-        font-size: 17px;
-        border-radius: 5px;
-        text-align: center;
-    }
+        #valorLivro {
+            width: 60px;
+            font-size: 17px;
+            border-radius: 5px;
+            text-align: center;
+        }
 
-    #addLivro{
-        font-size: 20px;
-        border-radius: 5px;
-    }
+        #addLivro {
+            font-size: 20px;
+            border-radius: 5px;
+        }
 
-        #addLivro:hover{
+        #addLivro:hover {
             background-color: blue;
             color: rgb(255, 255, 255);
 
@@ -264,40 +264,90 @@
             cursor: pointer;
         }
 
-        select{
+        select {
             border-radius: 5px;
             font-size: 17px;
             text-align: center;
         }
 
-        .inputSelectImg{
+        .inputSelectImg {
             display: inline-block;
             padding: 10px 20px;
             text-align: center;
             border-radius: 5px;
         }
 
-        .inputSelectImg:hover{
+        .inputSelectImg:hover {
             background-color: rgba(92, 92, 92, 0.575);
             color: white;
 
             transition: background-color 0.15s ease-in-out;
             cursor: pointer;
         }
-        
+
     }
-    .btnSair{
+
+    .btnSair {
         font-size: 20px;
         border-radius: 5px;
     }
 
-        .btnSair:hover{
-            background-color: blue;
-            color: white;
+    .btnSair:hover {
+        background-color: blue;
+        color: white;
 
-            transition: background-color 0.15s ease-in-out;
-            cursor: pointer;
-        }
+        transition: background-color 0.15s ease-in-out;
+        cursor: pointer;
+    }
 
+
+}
+
+/* ESTILIZAÇÃO DA TELA DE LIVROS 
+========================================================================================================================*/
+
+/* TENHO QUE AJUSTAR ESSA LISTA */
+#listaDeLivros {
+
+    display: flex;
+    flex-direction: column;
     
+
+    #cardLivro {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        margin-top: 20px;
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+
+        padding: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: cadetblue;
+
+        #imgLivro {
+            min-width: 250px;
+            min-height: 300px;
+
+            max-width: 300px;
+            max-height: 300px;
+        }
+    }
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        display: grid;
+        grid-template-columns: repeat(3,minmax(100px, 190px)); /* Cria colunas flexíveis */
+        gap: 250px; /* Espaçamento entre os itens */
+
+        li{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    }
 }
