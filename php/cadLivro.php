@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $imgLivro = $_FILES['img'];
     $fkIdAutor = $_POST['idAutor'];
     $fkIdEditora = $_POST['idEditora'];
-    
+
 
     //Tratamento no upload da imagem
 
@@ -72,49 +72,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Novo Livro</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body id="telaCadLivro">
 
-    <form method="POST" enctype="multipart/form-data">
-        <label for="nomeLivro">Nome do Livro</label><br>
-        <input type="text" name="nomeLivro" id="nomeLivro"><br><br>
+    <div id="formCadLivro">
+        <form method="POST" id="cadLivro" enctype="multipart/form-data">
+            <label for="nomeLivro">Nome do Livro</label><br>
+            <input type="text" name="nomeLivro" class="inputNormal" id="nomeLivro"><br><br>
 
-        <label for="dataPubli">Data de Publicação</label><br>
-        <input type="date" name="dataPubli" id="dataPubli"><br><br>
+            <label for="dataPubli">Data de Publicação</label><br>
+            <input type="date" name="dataPubli" class="inputNormal" id="dataPubli"><br><br>
 
-        <label for="valor">Valor do Livro:</label><br>
-        <input type="number" name="valor" id="valorLivro" step="0.01"><br><br>
+            <label for="valor">Valor do Livro:</label><br>
+            <input type="number" name="valor" id="valorLivro" step="0.01"><br><br>
 
-        <label for="idAutor">Autor:</label><br>
-        <select name="idAutor" require>
-            <option value="">selecione o autor</option>
-            <?php foreach($listaautor as $listaautores): ?>
-                <option value="<?php echo $listaautores['pk_id_autor']; ?>">
-                     <?php echo $listaautores['nome_autor']; ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <br><br>
+            <label for="idAutor">Autor:</label><br>
+            <select name="idAutor" require>
+                <option value="">selecione o autor</option>
+                <?php foreach ($listaautor as $listaautores): ?>
+                    <option value="<?php echo $listaautores['pk_id_autor']; ?>">
+                        <?php echo $listaautores['nome_autor']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <br><br>
 
-        <label for="idEditora">Editora:</label><br>
-        <select name="idEditora" require>
-            <option value="">selecione a editora</option>
-            <?php foreach($listaEditora as $listaEditoras): ?>
-                <option value="<?php echo $listaEditoras['pk_id_editora']; ?>">
-                     <?php echo $listaEditoras['nome_editora']; ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <br><br>
+            <label for="idEditora">Editora:</label><br>
+            <select name="idEditora" require>
+                <option value="">selecione a editora</option>
+                <?php foreach ($listaEditora as $listaEditoras): ?>
+                    <option value="<?php echo $listaEditoras['pk_id_editora']; ?>">
+                        <?php echo $listaEditoras['nome_editora']; ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <br><br>
 
-        <input type="file" id="selectImg" name="img" accept=".jpg, .png, .jpeg"><br>
-        <br>
+            <input type="file" class="inputSelectImg" name="img" accept=".jpg, .png, .jpeg"><br>        
+            <br>
 
-        <input type="submit" id="addLivro" value="Adicionar"><br><br>
-    </form>
+            <input type="submit" id="addLivro" value="Adicionar"><br><br>
+        </form>
 
-    <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
+        <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
+    </div>
 </body>
 
 </html>
