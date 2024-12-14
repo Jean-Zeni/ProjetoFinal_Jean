@@ -4,7 +4,7 @@
 /* ESTILIZAÇÃO DA TELA index.php */
 /* ==================================================================================================================== */
 
-#bodyTelaLogin{
+#bodyTelaLogin {
     display: flex;
 
     margin: 0;
@@ -22,7 +22,7 @@
     width: 100%;
     height: 100%;
 
-    #boxFormLogin{
+    #boxFormLogin {
         margin-top: 100px;
         padding: 20px;
         padding-left: 50px;
@@ -30,11 +30,11 @@
         background-color: rgba(221, 221, 221, 0.562);
     }
 
-    label{
+    label {
         font-size: 22px;
     }
 
-    .campoTexto{
+    .campoTexto {
         font-size: 18px;
         text-align: center;
         border-radius: 5px;
@@ -42,12 +42,12 @@
         background-color: rgba(255, 255, 255, 0.808);
     }
 
-    #btnLogin{
+    #btnLogin {
         font-size: 20px;
         border-radius: 5px;
     }
 
-    #btnLogin:hover{
+    #btnLogin:hover {
         background-color: blue;
         color: white;
 
@@ -55,15 +55,16 @@
         cursor: pointer;
     }
 
-    .mensagem-erro{
+    .mensagem-erro {
         font-weight: bold;
     }
 }
+
 /* ==================================================================================================================== */
 
 /* ESTILIZAÇÃO DA TELA DE CADASTRO DE USUÁRIO */
 /* ==================================================================================================================== */
-#telaCadNovoUsu{
+#telaCadNovoUsu {
     display: flex;
 
     margin: 0;
@@ -81,47 +82,123 @@
     width: 100%;
     height: 100%;
 
-    #addUsu{
+    #addUsu {
         margin-top: 100px;
         padding: 20px;
         padding-left: 50px;
         padding-right: 50px;
         background-color: rgba(221, 221, 221, 0.562);
 
-        label{
+        label {
             font-size: 20px;
         }
 
-        #btnCadNewUsu{
+        #btnCadNewUsu {
             font-size: 16px;
             border-radius: 5px;
         }
-    
-        #btnCadNewUsu:hover{
+
+        #btnCadNewUsu:hover {
             background-color: blue;
             color: white;
-    
+
             transition: background-color 0.15s ease-in-out;
             cursor: pointer;
         }
 
-        .btnSair{
+        .btnSair {
             font-size: 16px;
             border-radius: 5px;
         }
 
-        .btnSair:hover{
+        .btnSair:hover {
             background-color: red;
             color: white;
-    
+
             transition: background-color 0.15s ease-in-out;
             cursor: pointer;
         }
     }
 }
+
 /* ==================================================================================================================== */
 
+/* ESTILIZAÇÃO DO home.php */
+/* ==================================================================================================================== */
+
+#telaHome {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-family: "Gotu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    width: 100%;
+    height: 100%;
+
+    header {
+        width: 100%;
+        font-size: 30px;
+        height: 60px;
+        background-color: cadetblue;
+        color: white;
+    }
 
 
+    #botoesHome {
 
+        margin-top: 40px;
+        margin-bottom: -57px;
 
+        .btnHome {
+            font-size: 20px;
+            padding: 2px;
+            border-radius: 5px;
+            color: white;
+            background-color: cadetblue;
+
+            width: 300px;
+        }
+
+        .btnHome:hover {
+            background-color: rgba(95, 158, 160, 0.400);
+            color: rgb(0, 0, 0);
+
+            transition: background-color 0.15s ease-in-out;
+            cursor: pointer;
+        }
+
+        #btnLogout {
+            font-size: 20px;
+            padding: 2px;
+            border-radius: 5px;
+            color: white;
+            background-color: cadetblue;
+
+            width: 300px;
+        }
+
+        #btnLogout:hover {
+            background-color: rgba(95, 158, 160, 0.400);
+            color: rgb(0, 0, 0);
+
+            transition: background-color 0.15s ease-in-out;
+            cursor: pointer;
+        }
+    }
+
+    footer{
+        background-color: cadetblue;
+        margin-top: 130px;
+        width: 100%;
+        color: white;
+        font-size: 20px;
+    }
+}
