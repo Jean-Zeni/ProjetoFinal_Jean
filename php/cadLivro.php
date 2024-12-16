@@ -8,6 +8,11 @@ include_once './classes/Editora.php';
 
 session_start();
 
+if (!isset($_SESSION['idUsu'])) {
+    header('Location: index.php');
+    exit();
+}   
+
 $autorid = new Autor($db);
 $listaautor = $autorid->lerTodos();
 
@@ -20,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dataPubliLivro = $_POST['dataPubli'];
     $valorLivro = $_POST['valor'];
     $imgLivro = $_FILES['img'];
+    $unidadesLivro = $_POST['unidades'];
     $fkIdAutor = $_POST['idAutor'];
     $fkIdEditora = $_POST['idEditora'];
 
@@ -54,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erro ao fazer upload da imagem.");
     }
 
-    $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $destino, $fkIdAutor, $fkIdEditora);
+    $novoLivro->criar($nomeLivro, $dataPubliLivro, $valorLivro, $destino, $unidadesLivro, $fkIdAutor, $fkIdEditora);
     echo "Salvo com sucesso!";
     header('Location: cadLivro.php');
     exit();
@@ -86,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="date" name="dataPubli" class="inputNormal" id="dataPubli"><br><br>
 
             <label for="valor">Valor do Livro:</label><br>
-            <input type="number" name="valor" id="valorLivro" step="0.01"><br><br>
+            <input type="number" name="valor" class="inputsNumber" step="0.01"><br><br>
 
             <label for="idAutor">Autor:</label><br>
             <select name="idAutor" require>
@@ -112,6 +118,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <input type="file" class="inputSelectImg" name="img" accept=".jpg, .png, .jpeg"><br>        
             <br>
+
+            <label for="unidades">Número de Livros:</label><br>
+            <input type="number" name="unidades" class="inputsNumber" step="1"><br><br>
 
             <input type="submit" id="addLivro" value="Adicionar"><br><br>
         </form>

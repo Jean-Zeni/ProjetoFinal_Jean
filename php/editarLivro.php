@@ -32,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $valor = $_POST['valor_livro'];
     $fkIdEditora = $_POST['editora'];
     $imgLivro = $_FILES['imgLivro'];
+    $unidadesLivro = $_POST['quantLivro'];
     $fkIdAut = $_POST['idAutor'];
     // $idAutor = $_POST['idAutor'];
 
@@ -66,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     //FIM DO TRATAMENTO DE IMAGEM
 
-    $livro->atualizar($nome, $dataPubli, $valor, $destino, $fkIdAut, $fkIdEditora, $idLivro);
+    $livro->atualizar($nome, $dataPubli, $valor, $destino, $unidadesLivro, $fkIdAut, $fkIdEditora, $idLivro);
 
     header('Location: listaLivros.php');
 
@@ -120,7 +121,7 @@ if (isset($_GET['id'])) {
 
             <!-- VALOR -->
             <label for="valor_livro">Valor do Livro:</label><br>
-            <input type="number" name="valor_livro" id="txtValorLivro" step="0.01" value="<?php echo $row['valor_livro'] ?>"><br><br>
+            <input type="number" name="valor_livro" class="inputEditNumber" step="0.01" value="<?php echo $row['valor_livro'] ?>"><br><br>
 
             <!-- EDITORA -->
             <label for="editora">Editora:</label><br>
@@ -136,7 +137,11 @@ if (isset($_GET['id'])) {
             <!-- IMAGEM -->
             <input type="file" id="selectImg" name="imgLivro" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro']?>"><br><br>
 
-            <input type="submit" value="Salvar Alterações">
+            <!-- QUANTIDADE DE LIVROS -->
+            <label for="quantLivro">Quantidade de Livros Disponíveis:</label><br>
+            <input name="quantLivro" type="number" class="inputEditNumber" step="1" value="<?php echo $row['unidades'] ?>"><br><br>
+
+            <input type="submit" value="Salvar Alterações"><br>
         </form><br>
 
         <button class="btnSair" onclick="location.href='listaLivros.php'">Voltar</button>

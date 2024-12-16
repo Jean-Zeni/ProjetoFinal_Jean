@@ -40,13 +40,16 @@ if (isset($_GET['deletarLivro'])) {
 </head>
 <body id="telaListaLivros">
     
-<header><h1>Livros Disponíveis</h1></header>
+<header id="cabecalhoListaLivros">
+<button class="btnSair" onclick="location.href='home.php'"><img src="../assets/arrow_left_icon_48px.png" alt="voltar"></button>
+    <h1>Livros Disponíveis</h1>
+</header>
 
-<main>
+<main id="conteudoTelaLivros">
 
-<div id="listaDeLivros">
+<div id="livros">
 
-<ul>
+<ul id="listaLivros">
 <!-- ======================================================================================= -->
 
 <?php while ($row = $dadosLivro->fetch(PDO::FETCH_ASSOC)) : ?>
@@ -61,8 +64,9 @@ if (isset($_GET['deletarLivro'])) {
     ?>
 
 <!-- AQUI FICARÃO OS CARDS DE LIVROS -->
-    <li>
+    <li id="itensListaLivros">
         <div id="cardLivro">
+
         <!-- IMG LIVRO -->
         <img id="imgLivro" src="<?php echo $row['img_livro']?>" alt="Imagem do livro"> 
 
@@ -73,10 +77,10 @@ if (isset($_GET['deletarLivro'])) {
 
         echo "Autor: <strong>" . $row['nome_autor'] . "</strong><br><br>
         Valor do produto: " . $row['valor_livro'] . 
-        "<br><br>Data de Publicação: " . $dataFormatada->format('d/m/Y'); ?></p>
+        "<br><br>Data de Publicação: " . $dataFormatada->format('d/m/Y') . "<br><br>Quantidade disponível: <strong>" . $row['unidades'] . "</strong>"?></p>
 
-        <a href="deletarLivro.php?id=<?php echo $row['pk_id_livro']; ?>" >Deletar</a>
-        <a href="editarLivro.php?id=<?php echo $row['pk_id_livro']; ?>" >Editar</a><br><br>
+        <button onclick="location.href='deletarLivro.php?id=<?php echo $row['pk_id_livro'];?>'" class="botoesCardLivro">Deletar</button><br>
+        <button onclick="location.href='editarLivro.php?id=<?php echo $row['pk_id_livro'];?>'" class="botoesCardLivro">Editar</button>
 
     </div>
     </li>
@@ -85,9 +89,9 @@ if (isset($_GET['deletarLivro'])) {
     </ul>
 </div>
 
-<button class="btnSair" onclick="location.href='home.php'">Voltar</button>
-
 </main>
+
+<footer id="rodapeListaLivros"><h3>Desenvolvido por Jean Pereira Zeni</h3></footer>
 
 </body>
 </html>

@@ -1,6 +1,23 @@
 /* FONTE UTILIZADA */
 @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 
+/* Estilização geral dos botões de voltar */
+/* ==================================================================================================================== */
+.btnSair {
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.btnSair:hover {
+    background-color: blue;
+    color: white;
+
+    transition: background-color 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+/* ==================================================================================================================== */
+
 /* ESTILIZAÇÃO DA TELA index.php */
 /* ==================================================================================================================== */
 
@@ -229,6 +246,7 @@
 
     #formCadLivro {
         margin-top: 20px;
+        margin-bottom: 20px;
         padding: 20px;
         padding-left: 30px;
         padding-right: 30px;
@@ -244,7 +262,7 @@
             border-radius: 5px;
         }
 
-        #valorLivro {
+        .inputsNumber {
             width: 60px;
             font-size: 17px;
             border-radius: 5px;
@@ -306,48 +324,125 @@
 /* ESTILIZAÇÃO DA TELA DE LIVROS 
 ========================================================================================================================*/
 
-/* TENHO QUE AJUSTAR ESSA LISTA */
-#listaDeLivros {
+#telaListaLivros{
+    margin: 0;
+    padding: 0;
+}
 
+ /* AS ESTILIZAÇÕES ABAIXO FAZEM PARTE DA LISTA DE LIVROS EM SI */
+
+ #cabecalhoListaLivros{
     display: flex;
-    flex-direction: column;
+    position: fixed;
     
+    width: 100%;
+    height: 100px;
 
-    #cardLivro {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    background-color: cadetblue;
+    color: white;
+
+    h1{
+        position: absolute;
+        font-size: 40px;
+    }
+
+    .btnSair{
+        position: absolute;
+        left: 10px;
+
+        background: none;
+        border: 0;
+    }
+    
+ }
+
+    #livros {
         display: flex;
         flex-direction: column;
+
+        #cardLivro {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 300px;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: cadetblue;
+
+            #imgLivro {
+                min-width: 230px;
+                min-height: 300px;
+
+                max-width: 300px;
+                max-height: 300px;
+            }
+        }
+
+        #listaLivros{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 150px;
+
+            margin-left: 25px;
+
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px, 190px));
+            /* Cria colunas flexíveis */
+            column-gap: 250px;
+            /* Espaçamento entre as colunas */
+            row-gap: 50px;
+            /* Espaçamento entre as linhas */
+
+            #itensListaLivros{
+                color: white;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+
+                .botoesCardLivro{
+                    
+                        color: white;
+                        background-color: rgba(0, 0, 0, 0.384);                        
+                        font-size: 15px;
+                        border-radius: 5px;
+                
+                }
+
+                .botoesCardLivro:hover {
+                    background-color: cadetblue;
+                    color: white;
+            
+                    transition: background-color 0.15s ease-in-out;
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+
+    #rodapeListaLivros{
+        display: flex;
+        flex-direction: row;
         text-align: center;
-
-        margin-top: 20px;
-        width: 300px;
         justify-content: center;
-        align-items: center;
 
-        padding: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
         background-color: cadetblue;
-
-        #imgLivro {
-            min-width: 250px;
-            min-height: 300px;
-
-            max-width: 300px;
-            max-height: 300px;
-        }
+        color: white;
+        width: 100%;
+        height: 70px;
     }
-    ul{
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
 
-        display: grid;
-        grid-template-columns: repeat(3,minmax(100px, 190px)); /* Cria colunas flexíveis */
-        gap: 250px; /* Espaçamento entre os itens */
-
-        li{
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-    }
-}
+    /* ================================================================================================================ */
