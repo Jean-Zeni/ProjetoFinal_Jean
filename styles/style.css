@@ -30,7 +30,13 @@
             padding-right: 50px;
             border-radius: 20px;
             background-color: rgba(221, 221, 221, 0.562);
+
+            #btnLogin {
+                font-size: 16px;
+                border-radius: 5px;
+            }
         }
+
     }
 
     /* ESTILIZAÇÃO TELA CADASTRO NOVO USUÁRIO */
@@ -69,12 +75,18 @@
             font-size: 16px;
             border-radius: 5px;
         }
+
+        small {
+            font-size: 12px;
+        }
     }
 
+    /* ESTILIZAÇÃO TELA HOME */
+    /* =============================================================================================================== */
 }
 
-/* ESTILIZAÇÃO PARA DESKTOP */
-/* ================================================================================================================== */
+/*ESTILIZAÇÃO PARA DESKTOP*/
+
 @media(min-width: 601px) {
 
     /* Estilização geral dos botões */
