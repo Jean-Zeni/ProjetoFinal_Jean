@@ -1,89 +1,11 @@
 /* FONTE UTILIZADA */
 @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 
-/* ESTILIZAÇÃO GERAL (MOBILE E DESKTOP) */
-#telaHome {
-    display: flex;
-    flex-direction: column;
-
-    margin: 0;
-
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    font-family: "Gotu", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
-    width: 100%;
-    height: 100%;
-
-    header {
-        width: 100%;
-        font-size: 30px;
-        height: 60px;
-        background-color: cadetblue;
-        color: white;
-    }
-
-
-    #botoesHome {
-
-        margin-top: 40px;
-        margin-bottom: -57px;
-
-        .btnHome {
-            font-size: 20px;
-            padding: 2px;
-            border-radius: 5px;
-            color: white;
-            background-color: cadetblue;
-
-            width: 300px;
-        }
-
-        .btnHome:hover {
-            background-color: rgba(95, 158, 160, 0.400);
-            color: rgb(0, 0, 0);
-
-            transition: background-color 0.15s ease-in-out;
-            cursor: pointer;
-        }
-
-        #btnLogout {
-            font-size: 20px;
-            padding: 2px;
-            border-radius: 5px;
-            color: white;
-            background-color: cadetblue;
-
-            width: 300px;
-        }
-
-        #btnLogout:hover {
-            background-color: rgba(95, 158, 160, 0.400);
-            color: rgb(0, 0, 0);
-
-            transition: background-color 0.15s ease-in-out;
-            cursor: pointer;
-        }
-    }
-
-    footer {
-        background-color: cadetblue;
-        margin-top: 130px;
-        width: 100%;
-        color: white;
-        font-size: 20px;
-    }
-}
-
 /* ESTILIZAÇÃO PARA MOBILE */
-@media(max-width: 600px) {
+@media(max-width: 600px){
 
-    /* ESTILIZAÇÃO TELA LOGIN */
-    #bodyTelaLogin {
+    /* TELA LOGIN */
+    #bodyTelaLogin{
         display: flex;
 
         margin: 0;
@@ -93,45 +15,8 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-
-        font-family: "Gotu", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-
-        width: 100%;
-        height: 100%;
-
-        #boxFormLogin {
-            margin-top: 100px;
-            padding: 20px;
-            padding-left: 50px;
-            padding-right: 50px;
-            border-radius: 20px;
-            background-color: rgba(221, 221, 221, 0.562);
-
-            #btnLogin {
-                font-size: 16px;
-                border-radius: 5px;
-            }
-        }
-
-    }
-
-    /* ESTILIZAÇÃO TELA CADASTRO NOVO USUÁRIO */
-    /* ========================================================================================================== */
-
-    #telaCadNovoUsu {
-        display: flex;
         color: white;
 
-        margin: 0;
-
-        background-color: cadetblue;
-
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-
         font-family: "Gotu", sans-serif;
         font-weight: 400;
         font-style: normal;
@@ -139,100 +24,55 @@
         width: 100%;
         height: 100%;
 
-        #addUsu {
-            margin-top: 100px;
-            padding: 5px;
+        #boxFormLogin{
+            font-size: 20px;
+            margin-top: 50px;
         }
 
-        #btnCadNewUsu {
-            font-size: 16px;
-            border-radius: 5px;
+        .campoTexto{
+            font-size: 20px;
         }
 
-        .btnSair {
-            font-size: 16px;
-            border-radius: 5px;
+        #btnLogin{
+            font-size: 20px;
         }
 
-        small {
-            font-size: 12px;
-        }
     }
 
-    /* ESTILIZAÇÃO TELA HOME (CARACTERÍSTICAS ESPECÍFICAS DE MOBILE)*/
-    /* =============================================================================================================== */
-
-    #telaHome {
+    #telaCadNovoUsu{
         display: flex;
-        flex-direction: column;
-        padding: 0;
+
         margin: 0;
+
+        background-color: cadetblue;
+
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+
+        font-family: "Gotu", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+
         width: 100%;
         height: 100%;
-    
-        header {
-            width: 100%;
-        }
-    
-    
-        #botoesHome {
 
-            margin: 0;
-    
-            margin-top: 40px;
-            margin-bottom: -57px;
-    
-            .btnHome {
-                font-size: 20px;
-                padding: 2px;
-                border-radius: 5px;
-                color: white;
-                background-color: cadetblue;
-    
-                width: 300px;
-            }
-    
-            .btnHome:hover {
-                background-color: rgba(95, 158, 160, 0.400);
-                color: rgb(0, 0, 0);
-    
-                transition: background-color 0.15s ease-in-out;
-                cursor: pointer;
-            }
-    
-            #btnLogout {
-                margin: 0;
-                border-radius: 5px;
-    
-                width: 300px;
-            }
-    
-            #btnLogout:hover {
-                background-color: rgba(95, 158, 160, 0.400);
-                color: rgb(0, 0, 0);
-    
-                transition: background-color 0.15s ease-in-out;
-                cursor: pointer;
-            }
+        #btnCadNewUsu{
+            font-size: 20px;
         }
-    
-        footer {
-            position: absolute;
-            bottom: 0px;
-            background-color: cadetblue;
-            width: 100%;
-            color: white;
+
+        .btnSair{
             font-size: 20px;
         }
     }
-}
 
-/*ESTILIZAÇÃO PARA DESKTOP*/
+}
 
 @media(min-width: 601px) {
 
     /* Estilização geral dos botões */
-    /* ==================================================================================================================== */
     .btnNormal {
         font-size: 20px;
         border-radius: 5px;
@@ -262,8 +102,6 @@
     }
 
     /* ESTILIZAÇÃO GERAL DOS INPUTS*/
-    /* ==================================================================================================================== */
-
     .inputNormal {
         font-size: 17px;
         text-align: center;
@@ -278,8 +116,6 @@
     }
 
     /* ESTILIZAÇÃO GERAL DOS BOTÕES DE UPLOAD DE IMAGENS */
-    /* ==================================================================================================================== */
-
     .inputSelectImg {
         display: inline-block;
         padding: 10px 20px;
@@ -295,10 +131,7 @@
         cursor: pointer;
     }
 
-    /* ==================================================================================================================== */
-
     /* ESTILIZAÇÃO DA TELA index.php */
-    /* ==================================================================================================================== */
 
     #bodyTelaLogin {
         display: flex;
@@ -356,10 +189,7 @@
         }
     }
 
-    /* ==================================================================================================================== */
-
     /* ESTILIZAÇÃO DA TELA DE CADASTRO DE USUÁRIO */
-    /* ==================================================================================================================== */
     #telaCadNovoUsu {
         display: flex;
 
@@ -417,18 +247,86 @@
         }
     }
 
-    /* ==================================================================================================================== */
-
     /* ESTILIZAÇÃO DO home.php */
-    /* ==================================================================================================================== */
-
-    /* A TELA HOME ESTÁ ESTILIZADA NA ESTILIZAÇÃO GERAL (TANTO DO MOBILE QUANTO DO DESKTOP) */
-
-    /* ==================================================================================================================== */
+    #telaHome {
+        display: flex;
+        flex-direction: column;
+    
+        margin: 0;
+    
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    
+        font-family: "Gotu", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    
+        width: 100%;
+        height: 100%;
+    
+        header {
+            width: 100%;
+            font-size: 30px;
+            height: 60px;
+            background-color: cadetblue;
+            color: white;
+        }
+    
+    
+        #botoesHome {
+    
+            margin-top: 40px;
+            margin-bottom: -57px;
+    
+            .btnHome {
+                font-size: 20px;
+                padding: 2px;
+                border-radius: 5px;
+                color: white;
+                background-color: cadetblue;
+    
+                width: 300px;
+            }
+    
+            .btnHome:hover {
+                background-color: rgba(95, 158, 160, 0.400);
+                color: rgb(0, 0, 0);
+    
+                transition: background-color 0.15s ease-in-out;
+                cursor: pointer;
+            }
+    
+            #btnLogout {
+                font-size: 20px;
+                padding: 2px;
+                border-radius: 5px;
+                color: white;
+                background-color: cadetblue;
+    
+                width: 300px;
+            }
+    
+            #btnLogout:hover {
+                background-color: rgba(95, 158, 160, 0.400);
+                color: rgb(0, 0, 0);
+    
+                transition: background-color 0.15s ease-in-out;
+                cursor: pointer;
+            }
+        }
+    
+        footer {
+            position: absolute;
+            bottom: 0;
+            background-color: cadetblue;
+            width: 100%;
+            color: white;
+            font-size: 20px;
+        }
+    }
 
     /* ESTILIZAÇÃO DA PÁGINA cadLivro.php */
-    /* ==================================================================================================================== */
-
     #telaCadLivro {
         display: flex;
         flex-direction: column;
@@ -497,8 +395,7 @@
 
     }
 
-    /* ESTILIZAÇÃO DA TELA DE LIVROS 
-========================================================================================================================*/
+    /* ESTILIZAÇÃO DA TELA DE LIVROS */
 
     #telaListaLivros {
         margin: 0;
@@ -628,11 +525,7 @@
         height: 70px;
     }
 
-    /* =============================================================================================================== */
-
     /* ESTILIZAÇÃO DA TELA DE EDIÇÃO DE LIVROS */
-    /* =============================================================================================================== */
-
     #telaEditLivro {
         display: flex;
 
@@ -674,8 +567,6 @@
     }
 
     /* ESTILIZAÇÃO DA TELA DE CADASTRO DE AUTORES */
-    /* ================================================================================================================= */
-
     #telaCadAutor {
         display: flex;
 
@@ -704,11 +595,7 @@
         background-color: rgba(221, 221, 221, 0.562);
     }
 
-    /* ========================================================================================= */
-
     /* ESTILIZAÇÃO DA TELA DE AUTORES CADASTRADOS */
-    /* ========================================================================================= */
-
     #listaAutores {
         display: flex;
 
@@ -783,8 +670,6 @@
     }
 
     /* ESTILIZAÇÃO DA TELA DE CADASTRO DE EDITORAS */
-    /* ================================================================================================================= */
-
     #telaCadEditora {
         display: flex;
 
@@ -820,11 +705,7 @@
         }
     }
 
-    /* ================================================================================================================== */
-
     /* ESTILIZAÇÃO DA TELA DE EDITORAS CADASTRADAS */
-    /* ================================================================================================================== */
-
     #listaEditoras {
         display: flex;
         flex-direction: column;
