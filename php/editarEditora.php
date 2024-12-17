@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Editora</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body id="telaEditEditora">
     
@@ -55,15 +55,15 @@ if (isset($_GET['id'])) {
         <input type="hidden" name="pk_id_editora" value="<?php echo $row['pk_id_editora']; ?>">
 
         <label for="nome_editora">Nome da Editora:</label><br>
-        <input type="text" name="nome_editora" id="nomeEdit" value="<?php echo $row['nome_editora']; ?>"><br><br>
+        <input type="text" name="nome_editora" class="inputNormal" value="<?php echo $row['nome_editora']; ?>"><br><br>
 
         <label for="informacoes">Informações Adicionais:</label><br>
-        <textarea name="infos_editora" id="infosEdit" cols="15" rows="5"><?php echo $row['infos_editora']; ?></textarea><br><br>
+        <textarea name="infos_editora" class="inputNormal" cols="15" rows="5"><?php echo $row['infos_editora']; ?></textarea><br><br>
 
-        <input type="submit" value="Salvar Alterações">
-    </form>
+        <input type="submit" value="Salvar Alterações" class="btnSalvar">
+    </form><br>
 
-    <button class="btnSair" onclick="location.href='listaEditoras.php'">Voltar</button>
+    <button class="btnNormal" onclick="location.href='listaEditoras.php'">Voltar</button>
     </div>
 
 </body>

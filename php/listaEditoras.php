@@ -32,15 +32,17 @@ if (isset($_GET['deletarEditora'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autores Cadastrados</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
-<body id="listaAutores">
+<body id="listaEditoras">
 
     <table border="1">
         <tr>
             <th>ID</th>
             <th>Nome</th>
             <th>Informações adicionais</th>
+            <th>Ações</th>
         </tr>
         <?php while ($row = $dadosEditora->fetch(PDO::FETCH_ASSOC)) : ?>
             <tr>
@@ -49,14 +51,14 @@ if (isset($_GET['deletarEditora'])) {
                 <td><?php echo $row['infos_editora'] ?></td>
 
                 <td>
-                    <a href="deletarEditora.php?id=<?php echo $row['pk_id_editora'] ?>">Deletar</a>
-                    <a href="editarEditora.php?id=<?php echo $row['pk_id_editora'] ?>">Editar</a>
+                <button onclick="location.href='deletarEditora.php?id=<?php echo $row['pk_id_editora']?>'">Deletar</button>
+                <button onclick="location.href='editarEditora.php?id=<?php echo $row['pk_id_editora']?>'">Editar</button>
                 </td>
             </tr>
         <?php endwhile; ?>
     </table>
 
-    <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
+    <br><button class="btnNormal" onclick="location.href='home.php'">Voltar</button>
 </body>
 
 </html>

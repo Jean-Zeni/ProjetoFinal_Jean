@@ -88,7 +88,7 @@ if (isset($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Autor</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body id="telaEditLivro">
@@ -102,7 +102,7 @@ if (isset($_GET['id'])) {
 
             <!-- ESCOLHA DO AUTOR -->
             <label for="idAutor">Autor:</label><br>
-            <select name="idAutor" require>
+            <select name="idAutor" class="selectsLivro" require>
                 <?php foreach ($listaAutor as $listaAutores): ?>
                     <option value="<?php echo $listaAutores['pk_id_autor']; ?>">
                         <?php echo $listaAutores['nome_autor']?>
@@ -113,19 +113,19 @@ if (isset($_GET['id'])) {
 
             <!-- NOME -->
             <label for="nome_livro">Nome do Livro:</label><br>
-            <input type="text" name="nome_livro" id="txtNomeLivro" value="<?php echo $row['nome_livro']; ?> "><br><br>
+            <input type="text" name="nome_livro" class="inputNormal" value="<?php echo $row['nome_livro']; ?> "><br><br>
 
             <!-- DATA DE PUBLICAÇÃO -->
             <label for="data_publicacao_livro">Data de Publicação do Livro:</label><br>
-            <input type="date" name="data_publicacao_livro" id="txtDataPubliLivro" value="<?php echo $row['data_publicacao_livro'] ?>"><br><br>
+            <input type="date" name="data_publicacao_livro" class="inputNormal" value="<?php echo $row['data_publicacao_livro'] ?>"><br><br>
 
             <!-- VALOR -->
             <label for="valor_livro">Valor do Livro:</label><br>
-            <input type="number" name="valor_livro" class="inputEditNumber" step="0.01" value="<?php echo $row['valor_livro'] ?>"><br><br>
+            <input type="number" name="valor_livro" class="inputsNumber" step="0.01" value="<?php echo $row['valor_livro'] ?>"><br><br>
 
             <!-- EDITORA -->
             <label for="editora">Editora:</label><br>
-            <select name="editora" require>
+            <select name="editora" class="selectsLivro" require>
                 <?php foreach ($listaEditora as $listaEditoras): ?>
                     <option value="<?php echo $listaEditoras['pk_id_editora']; ?>">
                         <?php echo $listaEditoras['nome_editora']?>
@@ -135,16 +135,16 @@ if (isset($_GET['id'])) {
             <br><br>
 
             <!-- IMAGEM -->
-            <input type="file" id="selectImg" name="imgLivro" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro']?>"><br><br>
+            <input type="file" class="inputSelectImg" name="imgLivro" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro']?>"><br><br>
 
             <!-- QUANTIDADE DE LIVROS -->
             <label for="quantLivro">Quantidade de Livros Disponíveis:</label><br>
-            <input name="quantLivro" type="number" class="inputEditNumber" step="1" value="<?php echo $row['unidades'] ?>"><br><br>
+            <input name="quantLivro" type="number" class="inputsNumber" step="1" value="<?php echo $row['unidades'] ?>"><br><br>
 
-            <input type="submit" value="Salvar Alterações"><br>
+            <input type="submit" class="btnSalvar" value="Salvar Alterações"><br>
         </form><br>
 
-        <button class="btnSair" onclick="location.href='listaLivros.php'">Voltar</button>
+        <button class="btnNormal" onclick="location.href='listaLivros.php'">Voltar</button>
 
     </div>
 

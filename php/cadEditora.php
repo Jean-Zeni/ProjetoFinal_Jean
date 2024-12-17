@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Editora</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body id="telaCadEditora">
     
@@ -30,15 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <form method="post">
     <label for="nome">Nome da Editora:</label><br>
-    <input type="text" name="nome" id="nomeEdit"><br><br>
+    <input type="text" name="nome" class="inputNormal"><br><br>
 
     <label for="informacoes">Informações Adicionais:</label><br>
-    <textarea name="infos" id="infoseEdit" cols="15" rows="5">...</textarea>
+    <textarea name="infos" id="infosEdit" cols="15" rows="5">...</textarea><br><br>
 
-    <input type="submit" value="Adicionar"><br><br>
-    <input type="reset" value="Limpar">
+    <input type="submit" value="Adicionar" class="btnNormal"><br><br>
+    <input type="reset" value="Limpar" class="btnNormal">
 </form><br>
-<button class="btnSair" onclick="location.href='home.php'">Voltar</button>
+<button class="btnNormal" onclick="location.href='home.php'">Voltar</button>
 
 </div>
 

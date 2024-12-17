@@ -122,10 +122,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="unidades">Número de Livros:</label><br>
             <input type="number" name="unidades" class="inputsNumber" step="1"><br><br>
 
-            <input type="submit" id="addLivro" value="Adicionar"><br><br>
+            <input type="submit" class="btnNormal" value="Adicionar"><br><br>
         </form>
 
-        <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
+        <button class="btnNormal" onclick="location.href='home.php'">Voltar</button>
     </div>
 </body>
 

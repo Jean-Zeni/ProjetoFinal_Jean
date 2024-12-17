@@ -32,31 +32,37 @@ if (isset($_GET['deletarAutor'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autores Cadastrados</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body id="listaAutores">
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Nacionalidade</th>
-        </tr>
-        <?php while ($row = $dadosAutor->fetch(PDO::FETCH_ASSOC)) : ?>
+    <div id="autoresCadastrados">
+        <table border="1">
             <tr>
-                <td><?php echo $row['pk_id_autor'] ?></td>
-                <td><?php echo $row['nome_autor'] ?></td>
-                <td><?php echo $row['nacionalidade_autor'] ?></td>
-
-                <td>
-                    <a href="deletarAutor.php?id=<?php echo $row['pk_id_autor'] ?>">Deletar</a>
-                    <a href="editarAutor.php?id=<?php echo $row['pk_id_autor'] ?>">Editar</a>
-                </td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Nacionalidade</th>
+                <th>Ações</th>
             </tr>
-        <?php endwhile; ?>
-    </table><br>
+            <?php while ($row = $dadosAutor->fetch(PDO::FETCH_ASSOC)) : ?>
+                <tr>
+                    <td><?php echo $row['pk_id_autor'] ?></td>
+                    <td><?php echo $row['nome_autor'] ?></td>
+                    <td><?php echo $row['nacionalidade_autor'] ?></td>
 
-    <button class="btnSair" onclick="location.href='home.php'">Voltar</button>
+                    <td>
+                        <button onclick="location.href='deletarAutor.php?id=<?php echo $row['pk_id_autor']?>'">Deletar</button>
+                        <button onclick="location.href='editarAutor.php?id=<?php echo $row['pk_id_autor']?>'">Editar</button>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table><br>
+
+        <br><button class="btnNormal" onclick="location.href='home.php'">Voltar</button>
+
+    </div>
+
 </body>
 
 </html>
