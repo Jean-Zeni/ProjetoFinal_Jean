@@ -1,6 +1,84 @@
 /* FONTE UTILIZADA */
 @import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap');
 
+/* ESTILIZAÇÃO GERAL (MOBILE E DESKTOP) */
+#telaHome {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    font-family: "Gotu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    width: 100%;
+    height: 100%;
+
+    header {
+        width: 100%;
+        font-size: 30px;
+        height: 60px;
+        background-color: cadetblue;
+        color: white;
+    }
+
+
+    #botoesHome {
+
+        margin-top: 40px;
+        margin-bottom: -57px;
+
+        .btnHome {
+            font-size: 20px;
+            padding: 2px;
+            border-radius: 5px;
+            color: white;
+            background-color: cadetblue;
+
+            width: 300px;
+        }
+
+        .btnHome:hover {
+            background-color: rgba(95, 158, 160, 0.400);
+            color: rgb(0, 0, 0);
+
+            transition: background-color 0.15s ease-in-out;
+            cursor: pointer;
+        }
+
+        #btnLogout {
+            font-size: 20px;
+            padding: 2px;
+            border-radius: 5px;
+            color: white;
+            background-color: cadetblue;
+
+            width: 300px;
+        }
+
+        #btnLogout:hover {
+            background-color: rgba(95, 158, 160, 0.400);
+            color: rgb(0, 0, 0);
+
+            transition: background-color 0.15s ease-in-out;
+            cursor: pointer;
+        }
+    }
+
+    footer {
+        background-color: cadetblue;
+        margin-top: 130px;
+        width: 100%;
+        color: white;
+        font-size: 20px;
+    }
+}
+
 /* ESTILIZAÇÃO PARA MOBILE */
 @media(max-width: 600px) {
 
@@ -81,8 +159,72 @@
         }
     }
 
-    /* ESTILIZAÇÃO TELA HOME */
+    /* ESTILIZAÇÃO TELA HOME (CARACTERÍSTICAS ESPECÍFICAS DE MOBILE)*/
     /* =============================================================================================================== */
+
+    #telaHome {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    
+        header {
+            width: 100%;
+        }
+    
+    
+        #botoesHome {
+
+            margin: 0;
+    
+            margin-top: 40px;
+            margin-bottom: -57px;
+    
+            .btnHome {
+                font-size: 20px;
+                padding: 2px;
+                border-radius: 5px;
+                color: white;
+                background-color: cadetblue;
+    
+                width: 300px;
+            }
+    
+            .btnHome:hover {
+                background-color: rgba(95, 158, 160, 0.400);
+                color: rgb(0, 0, 0);
+    
+                transition: background-color 0.15s ease-in-out;
+                cursor: pointer;
+            }
+    
+            #btnLogout {
+                margin: 0;
+                border-radius: 5px;
+    
+                width: 300px;
+            }
+    
+            #btnLogout:hover {
+                background-color: rgba(95, 158, 160, 0.400);
+                color: rgb(0, 0, 0);
+    
+                transition: background-color 0.15s ease-in-out;
+                cursor: pointer;
+            }
+        }
+    
+        footer {
+            position: absolute;
+            bottom: 0px;
+            background-color: cadetblue;
+            width: 100%;
+            color: white;
+            font-size: 20px;
+        }
+    }
 }
 
 /*ESTILIZAÇÃO PARA DESKTOP*/
@@ -280,82 +422,7 @@
     /* ESTILIZAÇÃO DO home.php */
     /* ==================================================================================================================== */
 
-    #telaHome {
-        display: flex;
-        flex-direction: column;
-
-        margin: 0;
-
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-
-        font-family: "Gotu", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-
-        width: 100%;
-        height: 100%;
-
-        header {
-            width: 100%;
-            font-size: 30px;
-            height: 60px;
-            background-color: cadetblue;
-            color: white;
-        }
-
-
-        #botoesHome {
-
-            margin-top: 40px;
-            margin-bottom: -57px;
-
-            .btnHome {
-                font-size: 20px;
-                padding: 2px;
-                border-radius: 5px;
-                color: white;
-                background-color: cadetblue;
-
-                width: 300px;
-            }
-
-            .btnHome:hover {
-                background-color: rgba(95, 158, 160, 0.400);
-                color: rgb(0, 0, 0);
-
-                transition: background-color 0.15s ease-in-out;
-                cursor: pointer;
-            }
-
-            #btnLogout {
-                font-size: 20px;
-                padding: 2px;
-                border-radius: 5px;
-                color: white;
-                background-color: cadetblue;
-
-                width: 300px;
-            }
-
-            #btnLogout:hover {
-                background-color: rgba(95, 158, 160, 0.400);
-                color: rgb(0, 0, 0);
-
-                transition: background-color 0.15s ease-in-out;
-                cursor: pointer;
-            }
-        }
-
-        footer {
-            background-color: cadetblue;
-            margin-top: 130px;
-            width: 100%;
-            color: white;
-            font-size: 20px;
-        }
-    }
+    /* A TELA HOME ESTÁ ESTILIZADA NA ESTILIZAÇÃO GERAL (TANTO DO MOBILE QUANTO DO DESKTOP) */
 
     /* ==================================================================================================================== */
 
