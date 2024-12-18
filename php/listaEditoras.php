@@ -37,6 +37,7 @@ if (isset($_GET['deletarEditora'])) {
 
 <body id="listaEditoras">
 
+<div id="editorasCadastradas">
     <table border="1">
         <tr>
             <th>ID</th>
@@ -57,6 +58,7 @@ if (isset($_GET['deletarEditora'])) {
             </tr>
         <?php endwhile; ?>
     </table>
+    </div>
 
     <br><button class="btnNormal" onclick="location.href='home.php'">Voltar</button>
 </body>

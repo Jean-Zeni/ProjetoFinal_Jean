@@ -49,7 +49,7 @@ if (isset($_GET['deletarAutor'])) {
                 <tr>
                     <td><?php echo $row['pk_id_autor'] ?></td>
                     <td><?php echo $row['nome_autor'] ?></td>
-                    <td><?php echo $row['nacionalidade_autor'] ?></td>
+                    <td id="nacionalidade"><?php echo $row['nacionalidade_autor'] ?></td>
 
                     <td>
                         <button onclick="location.href='deletarAutor.php?id=<?php echo $row['pk_id_autor']?>'">Deletar</button>
