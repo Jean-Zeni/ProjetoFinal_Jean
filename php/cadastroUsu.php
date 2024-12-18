@@ -46,15 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form id="formCadNewUsu" method="POST" onsubmit="return validarSenha()"> <!--O ERRO ESTÁ RELACIONAFO AO ONSUBMIT-->
             <label for="nomeUsu">Nome:</label><br>
-            <input type="text" name="nomeUsuario" class="campoTexto">
+            <input type="text" name="nomeUsuario" class="inputNormal">
             <br><br>
 
             <label for="emailUsuario">E-mail:</label><br>
-            <input type="email" name="emailUsuario" class="campoTexto">
+            <input type="email" name="emailUsuario" class="inputNormal">
             <br><br>
 
             <label for="senhaUsuario">Senha:</label><br>
-            <input type="password" name="senhaUsuario" class="campoTexto" id="fieldSenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$"><br>
+            <input type="password" name="senhaUsuario" class="inputNormal" id="fieldSenha" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$"><br>
             <small><strong>A senha deve conter pelo menos 8 caracteres e ser composta de<br> letras, números e caracteres especiais.</strong></small>
             <br><br>
 

@@ -31,23 +31,25 @@ $usu = new Usuario($db);
 
 <body id="telaHome">
 
-    <header><h1>HOME</h1></header>
+    <header>
+        <h1>HOME</h1>
+    </header>
 
     <div id="botoesHome">
 
-    <button class="btnHome" onclick="location.href='cadLivro.php'">Cadastrar Novo Livro/Produto</button><br><br>
+        <button class="btnHome" onclick="location.href='cadLivro.php'">Cadastrar Novo Livro/Produto</button><br><br>
 
-    <button class="btnHome" onclick="location.href='listaLivros.php'">Livros</button><br><br>
+        <button class="btnHome" onclick="location.href='listaLivros.php'">Livros</button><br><br>
 
-    <button class="btnHome" onclick="location.href='cadAutor.php'">Cadastrar Novo Autor</button><br><br>
+        <button class="btnHome" onclick="location.href='cadAutor.php'">Cadastrar Novo Autor</button><br><br>
 
-    <button class="btnHome" onclick="location.href='listaAutores.php'">Autores Cadastrados</button><br><br>
+        <button class="btnHome" onclick="location.href='listaAutores.php'">Autores Cadastrados</button><br><br>
 
-    <button class="btnHome" onclick="location.href='cadEditora.php'">Cadastrar Nova Editora</button><br><br>
+        <button class="btnHome" onclick="location.href='cadEditora.php'">Cadastrar Nova Editora</button><br><br>
 
-    <button class="btnHome" onclick="location.href='listaEditoras.php'">Editoras Cadastradas</button><br><br>
+        <button class="btnHome" onclick="location.href='listaEditoras.php'">Editoras Cadastradas</button><br><br>
 
-    <button id="btnLogout" onclick="location.href='logout.php'">Fazer logout</button><br><br>
+        <button id="btnLogout" onclick="location.href='logout.php'">Fazer logout</button><br><br>
 
     </div>
 

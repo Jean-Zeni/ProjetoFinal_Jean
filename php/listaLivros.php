@@ -47,6 +47,10 @@ if (isset($_GET['deletarLivro'])) {
 
 <main id="conteudoTelaLivros">
 
+<div id="caixaPesquisa">
+    <input type="search" class="barraPesquisa">
+</div>
+
 <div id="livros">
 
 <ul id="listaLivros">

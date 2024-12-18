@@ -49,10 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <form method="POST">
 
-            <label for="email">E-mail:</label><br>
+            <label for="email"><strong>E-mail:</strong></label><br>
             <input type="email" name="email" class="campoTexto"><br>
 
-            <br><label for="senha">Senha:</label><br>
+            <br><label for="senha"><strong>Senha:</strong></label><br>
             <input type="password" name="senha" class="campoTexto"><br>
 
             <br>

@@ -104,8 +104,9 @@ if (isset($_GET['id'])) {
             <label for="idAutor">Autor:</label><br>
             <select name="idAutor" class="selectsLivro" require>
                 <?php foreach ($listaAutor as $listaAutores): ?>
-                    <option value="<?php echo $listaAutores['pk_id_autor']; ?>">
-                        <?php echo $listaAutores['nome_autor']?>
+                    <option value="<?php echo $listaAutores['pk_id_autor']; ?>"
+                        <?php if ($row['fk_id_autor'] == $listaAutores['pk_id_autor']) echo 'selected'; ?>>
+                        <?php echo $listaAutores['nome_autor'] ?>
                     </option>
                 <?php endforeach; ?>
             </select>
@@ -127,15 +128,16 @@ if (isset($_GET['id'])) {
             <label for="editora">Editora:</label><br>
             <select name="editora" class="selectsLivro" require>
                 <?php foreach ($listaEditora as $listaEditoras): ?>
-                    <option value="<?php echo $listaEditoras['pk_id_editora']; ?>">
-                        <?php echo $listaEditoras['nome_editora']?>
+                    <option value="<?php echo $listaEditoras['pk_id_editora']; ?>"
+                        <?php if ($row['fk_id_editora'] == $listaEditoras['pk_id_editora']) echo 'selected'; ?>>
+                        <?php echo $listaEditoras['nome_editora'] ?>
                     </option>
                 <?php endforeach; ?>
             </select>
             <br><br>
 
             <!-- IMAGEM -->
-            <input type="file" class="inputSelectImg" name="imgLivro" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro']?>"><br><br>
+            <input type="file" class="inputSelectImg" name="imgLivro" accept=".jpg, .png, .jpeg" value="<?php echo $row['img_livro'] ?>"><br><br>
 
             <!-- QUANTIDADE DE LIVROS -->
             <label for="quantLivro">Quantidade de Livros Disponíveis:</label><br>

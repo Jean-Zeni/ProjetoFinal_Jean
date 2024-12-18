@@ -66,6 +66,7 @@
 
     #bodyTelaLogin {
         display: flex;
+        flex-direction: column;
 
         margin: 0;
 
@@ -88,6 +89,10 @@
             padding-left: 50px;
             padding-right: 50px;
             background-color: rgba(221, 221, 221, 0.562);
+            background-image: url('../assets/logo-removebg-preview.png');
+            background-repeat: no-repeat;
+            background-position: -33px -120px;
+            background-blend-mode: color;
         }
 
         label {
@@ -182,20 +187,20 @@
     #telaHome {
         display: flex;
         flex-direction: column;
-    
+
         margin: 0;
-    
+
         align-items: center;
         justify-content: center;
         text-align: center;
-    
+
         font-family: "Gotu", sans-serif;
         font-weight: 400;
         font-style: normal;
-    
+
         width: 100%;
         height: 100%;
-    
+
         header {
             width: 100%;
             font-size: 30px;
@@ -203,50 +208,50 @@
             background-color: cadetblue;
             color: rgb(255, 255, 255);
         }
-    
-    
+
+
         #botoesHome {
-    
+
             margin-top: 40px;
             margin-bottom: -57px;
-    
+
             .btnHome {
                 font-size: 20px;
                 padding: 2px;
                 border-radius: 5px;
                 color: white;
                 background-color: cadetblue;
-    
+
                 width: 300px;
             }
-    
+
             .btnHome:hover {
                 background-color: rgba(95, 158, 160, 0.400);
                 color: rgb(0, 0, 0);
-    
+
                 transition: background-color 0.15s ease-in-out;
                 cursor: pointer;
             }
-    
+
             #btnLogout {
                 font-size: 20px;
                 padding: 2px;
                 border-radius: 5px;
                 color: white;
                 background-color: cadetblue;
-    
+
                 width: 300px;
             }
-    
+
             #btnLogout:hover {
                 background-color: rgba(95, 158, 160, 0.400);
                 color: rgb(0, 0, 0);
-    
+
                 transition: background-color 0.15s ease-in-out;
                 cursor: pointer;
             }
         }
-    
+
         footer {
             position: absolute;
             bottom: 0;
@@ -335,6 +340,7 @@
         font-family: "Gotu", sans-serif;
         font-weight: 400;
         font-style: normal;
+
     }
 
     /* AS ESTILIZAÇÕES ABAIXO FAZEM PARTE DA LISTA DE LIVROS EM SI */
@@ -722,19 +728,19 @@
 }
 
 /* ESTILIZAÇÃO PARA MOBILE */
-@media(max-width: 600px){
+@media(max-width: 600px) {
 
     /* ESTILIZAÇÃO GERAL */
-    .btnNormal{
+    .btnNormal {
         font-size: 20px;
     }
 
-    .btnSalvar{
+    .btnSalvar {
         font-size: 20px;
     }
 
     /* TELA LOGIN */
-    #bodyTelaLogin{
+    #bodyTelaLogin {
         display: flex;
 
         margin: 0;
@@ -753,26 +759,26 @@
         width: 100%;
         height: 100%;
 
-        a{
+        a {
             color: white;
         }
 
-        #boxFormLogin{
+        #boxFormLogin {
             font-size: 20px;
             margin-top: 50px;
         }
 
-        .campoTexto{
+        .campoTexto {
             font-size: 20px;
         }
 
-        #btnLogin{
+        #btnLogin {
             font-size: 20px;
         }
 
     }
 
-    #telaCadNovoUsu{
+    #telaCadNovoUsu {
         display: flex;
 
         margin: 0;
@@ -792,16 +798,16 @@
         width: 100%;
         height: 100%;
 
-        #btnCadNewUsu{
+        #btnCadNewUsu {
             font-size: 20px;
         }
 
-        .btnSair{
+        .btnSair {
             font-size: 20px;
         }
     }
 
-    #telaHome{
+    #telaHome {
         display: flex;
         flex-direction: column;
 
@@ -822,7 +828,7 @@
         width: 100%;
         height: 100%;
 
-        header{
+        header {
             position: fixed;
             top: 0;
             width: 100%;
@@ -833,30 +839,30 @@
             justify-content: center;
             align-items: center;
 
-            h1{
+            h1 {
                 position: relative;
                 top: 7px;
                 font-size: 20px;
             }
         }
 
-        #botoesHome{
+        #botoesHome {
             margin-top: 100px;
         }
 
-        .btnHome{
+        .btnHome {
             font-size: 20px;
             background-color: cadetblue;
             color: white;
         }
 
-        #btnLogout{
+        #btnLogout {
             font-size: 20px;
             background-color: cadetblue;
             color: white;
         }
 
-        footer{
+        footer {
             position: absolute;
             bottom: 0;
             background-color: cadetblue;
@@ -867,7 +873,7 @@
 
 
     /* ESTILIZAÇÃO DA TELA DE CADASTRO DE LIVROS */
-    #telaCadLivro{
+    #telaCadLivro {
         display: flex;
         flex-direction: column;
 
@@ -888,30 +894,30 @@
         width: 100%;
         height: 100%;
 
-        label{
+        label {
             font-size: 20px;
         }
 
-        .inputNormal{
+        .inputNormal {
             font-size: 20px;
         }
 
-        .inputsNumber{
+        .inputsNumber {
             font-size: 20px;
         }
 
-        .inputSelectImg{
+        .inputSelectImg {
             font-size: 16px;
         }
 
-        select{
+        select {
             font-size: 20px;
         }
     }
 
     /* TELA LISTA LIVROS */
 
-    #telaListaLivros{
+    #telaListaLivros {
         display: flex;
         flex-direction: column;
 
@@ -932,7 +938,7 @@
         width: 100%;
         height: 100%;
 
-        header{
+        header {
             background-color: white;
             color: black;
             font-size: 18px;
@@ -940,7 +946,7 @@
             margin-bottom: 10px;
             width: 100%;
 
-            button{
+            button {
                 background: none;
                 border: 0;
                 position: absolute;
@@ -949,19 +955,19 @@
             }
         }
 
-        footer{
+        footer {
             background-color: white;
             color: black;
             width: 100%;
         }
 
-        #listaLivros{
+        #listaLivros {
             gap: 15px;
             margin: 0;
             margin-right: 40px;
         }
 
-        #itensListaLivros{
+        #itensListaLivros {
             margin-bottom: 15px;
             color: black;
             background-color: rgba(255, 255, 255, 0.829);
@@ -969,20 +975,20 @@
 
         }
 
-        #imgLivro{
+        #imgLivro {
             min-width: 200px;
 
-            max-width:250px;
+            max-width: 250px;
         }
 
-        .botoesCardLivro{
+        .botoesCardLivro {
             font-size: 20px;
         }
     }
 
     /* ESTILIZAÇÃO DA TELA DE EDIÇÃO DE LIVROS */
 
-    #telaEditLivro{
+    #telaEditLivro {
         display: flex;
         flex-direction: column;
 
@@ -1003,29 +1009,29 @@
         width: 100%;
         height: 100%;
 
-        .inputNormal{
+        .inputNormal {
             font-size: 20px;
         }
 
-        .inputsNumber{
+        .inputsNumber {
             font-size: 20px;
         }
 
-        .inputSelectImg{
+        .inputSelectImg {
             font-size: 16px;
         }
 
-        .inputSelectImg{
+        .inputSelectImg {
             font-size: 16px;
         }
 
-        select{
+        select {
             font-size: 20px;
         }
     }
 
     /* ESTILIZAÇÃO DA TELA DE EDIÇÃO DE EDITORAS */
-    #telaEditEditora{
+    #telaEditEditora {
         display: flex;
         flex-direction: column;
 
@@ -1046,15 +1052,15 @@
         width: 100%;
         height: 100%;
 
-        #boxCadEditora{
+        #boxCadEditora {
             margin-top: 200px;
         }
 
-        .inputNormal{
+        .inputNormal {
             font-size: 20px;
         }
 
-        textArea{
+        textArea {
             font-size: 20px;
             width: 300px;
             height: 300px;
@@ -1064,7 +1070,7 @@
 
     /* EDIÇÃO DA TELA DE CADASTRO DE AUTORES */
 
-    #telaCadAutor{
+    #telaCadAutor {
         display: flex;
         flex-direction: column;
 
@@ -1085,17 +1091,17 @@
         width: 100%;
         height: 100%;
 
-        #boxCadAutor{
+        #boxCadAutor {
             margin-top: 200px;
         }
 
-        .inputNormal{
+        .inputNormal {
             font-size: 20px;
         }
     }
 
     /* ESTILIZAÇÃO DA TELA DE CADASTRO DE EDITORAS */
-    #telaCadEditora{
+    #telaCadEditora {
         display: flex;
         flex-direction: column;
 
@@ -1116,15 +1122,15 @@
         width: 100%;
         height: 100%;
 
-        #boxCadEditora{
+        #boxCadEditora {
             margin-top: 200px;
         }
 
-        .inputNormal{
+        .inputNormal {
             font-size: 20px;
         }
 
-        textArea{
+        textArea {
             font-size: 20px;
             width: 300px;
             height: 300px;
@@ -1134,7 +1140,7 @@
 
     /* ESTILIZAÇÃO DA TELA DE AUTORES CADASTRADOS */
 
-    #listaAutores{
+    #listaAutores {
         display: flex;
         flex-direction: column;
 
@@ -1155,17 +1161,17 @@
         width: 100%;
         height: 100%;
 
-        #nacionalidade{
+        #nacionalidade {
             font-size: 15px;
         }
     }
 
-    #autoresCadastrados{
+    #autoresCadastrados {
         margin-top: 120px;
     }
 
     /* ESTILIZAÇÃO DA TELA DE EDIÇÃO DE LIVROS */
-    #telaEditAutor{
+    #telaEditAutor {
         display: flex;
         flex-direction: column;
 
@@ -1186,14 +1192,14 @@
         width: 100%;
         height: 100%;
 
-        .inputNormal{
+        .inputNormal {
             font-size: 20px;
         }
     }
 
     /* ESTILIZAÇÃO DA TELA DE EDITORAS CADASTRADAS */
 
-    #listaEditoras{
+    #listaEditoras {
         display: flex;
         flex-direction: column;
 
@@ -1215,8 +1221,7 @@
         height: 100%;
     }
 
-    #editorasCadastradas{
+    #editorasCadastradas {
         margin-top: 120px;
     }
 }
-
