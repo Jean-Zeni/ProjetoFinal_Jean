@@ -126,6 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <input type="number" name="unidades" class="inputsNumber" step="1"><br><br>
 
             <input type="submit" class="btnNormal" value="Adicionar"><br><br>
+            <input type="reset" class="btnNormal" value="Limpar"><br><br>
         </form>
 
         <button class="btnNormal" onclick="location.href='home.php'">Voltar</button>

@@ -60,7 +60,7 @@ if (isset($_GET['id'])) {
         <label for="informacoes">Informações Adicionais:</label><br>
         <textarea name="infos_editora" class="inputNormal" cols="15" rows="5"><?php echo $row['infos_editora']; ?></textarea><br><br>
 
-        <input type="submit" value="Salvar Alterações" class="btnSalvar">
+        <input type="submit" value="Salvar Alterações" class="btnSalvar"><br>
     </form><br>
 
     <button class="btnNormal" onclick="location.href='listaEditoras.php'">Voltar</button>
